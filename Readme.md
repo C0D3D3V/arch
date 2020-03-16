@@ -1,6 +1,6 @@
 # Arch-Linux
 
-## Installation von pacman Paketen
+## Installation von Paketen
 
-`cat pkg_list.md | grep "^[ \t]*+" | sed "s/^[ \t]*+[ \t]*//g" | sudo pacman -S --needed -`
+`cat packages/* | grep "^[ \t]*+" | sed "s/^[ \t]*+[ \t]*//g" | yay -S --needed -`
 
