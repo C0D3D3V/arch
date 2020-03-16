@@ -26,5 +26,9 @@ Um die aktuelle Größe des Paket-Caches zu erhalten, verwende:
 
 Durch die Aktivierung des Services `paccache.timer`, werden unbenutzte Pakete wöchentlich verworfen.
 
+[Desweiteren](https://wiki.archlinux.org/index.php/Pacman/Pacnew_and_Pacsave#pacdiff) ist es mit `pacdiff` nach einem Update möglich die neuen Konfigurationsdateien der Pakete mit dein eigenen zusammenzuführen. 
+
+
+
 
 
