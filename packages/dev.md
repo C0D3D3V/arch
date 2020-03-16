@@ -1,4 +1,4 @@
-# Entwicklungs-Werkzeuge und Anwendungen
+# Entwicklungs-Werkzeuge
 
 ## Datei-Vergleichswerkzeuge
 
@@ -11,6 +11,8 @@ Mit `colordiff` ist es im Terminal möglich zwei  Dateien zu vergleichen. Dabei 
 Alternativen: 
 
     - ydiff
+
+Natürlich kann auch `vim` oder `emacs` als diff-Werkzeug verwendet werden.
 
 ### Desktop-GUI
 
