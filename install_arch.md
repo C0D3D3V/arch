@@ -260,7 +260,7 @@ Weil nun konfiguriert wurde, dass 'arch' standardmäßig gestartet werden soll m
     linux /vmlinuz-linux
     initrd /intel-ucode.img
     initrd /initramfs-linux.img
-    options cryptdevice=UUID={UUID}:vgMain root=/dev/mapper/vgMain-root resume=/dev/mapper/vgMain-swap quiet rw
+    options cryptdevice=UUID={UUID}:cryptlvm root=/dev/mapper/vgMain-root resume=/dev/mapper/vgMain-swap quiet rw
 
 Um die Geschwindigkeit weiter zu erhöhen kann zu den Optionen bei einer Intel-CPU die Option `intel_pstate=no_hwp` hinzugefügt werden um C0 States (P-states) zu deaktivieren.
 
