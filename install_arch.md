@@ -230,11 +230,12 @@ Dann müssen bei HOOKS folgende Hooks hinzugefügt werden:
 
 - Zwischen `autodetect` und `modconf` muss `keyboard keymap consolefont` hinzugefügt werden
 - Dafür kann der keyboard HOOK nach filesystems entfernt werden
-- Zwischen `block` und `filesystems` muss `encrypt lvm2` hinzugefügt werden. 
+- Zwischen `block` und `filesystems` muss `encrypt lvm2 resume` hinzugefügt werden. 
+- Am Ende wird `shutdown suspend` nach `fsck` hinzugefügt
 
 Dies könnte wie folgt aussehen:
 
-    HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 filesystems fsck)
+    HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 resume filesystems fsck shutdown suspend)
 
 Nun muss nur noch das initramfs Abbild neu erstellt werden, wie folgt:
 
