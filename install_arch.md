@@ -190,7 +190,7 @@ Anschließend können die locales wie folgt generiert werden:
     locale-gen
     localectl set-locale LANG=de_DE.UTF-8
 
-    echo LANG=en_US.UTF-8 >> /etc/locale.conf
+    echo LANG=de_DE.UTF-8 >> /etc/locale.conf
     echo LC_ALL= >> /etc/locale.conf
 
     echo KEYMAP=de-latin1 >> /etc/vconsole.conf
