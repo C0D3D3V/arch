@@ -151,6 +151,11 @@ Bevor die Installation gestartet wird sollte die Liste der Spiegelserver angepas
 
     vim /etc/pacman.d/mirrorlist
 
+Alternativ kann dies auch automatisch erledigt werden:
+
+    pacman -Sy reflector
+    reflector --country France --country Germany --age 12 --protocol https --sort rate --verbose --save /etc/pacman.d/mirrorlist
+
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor vim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 
     pacstrap /mnt base base-devel linux-firmware linux lvm2 vim zsh efibootmgr intel-ucode
