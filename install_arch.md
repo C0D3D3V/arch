@@ -12,6 +12,8 @@ Dieses Repository kann mit `git` heruntergeladen werden:
 
     git colone https://github.com/C0D3D3V/arch.git
 
+Alternativ zu dieser Anleitung kann auch das identische automatische Skript von [hier](https://github.com/C0D3D3V/simpleAui/blob/master/liveinstall) verwendet werden.
+
 Innerhalb des Terminals kann mit [Shift + Bild-Hoch] und entsprechend [Shift + Bild-Runter] gescrollt werden.
 
 Du kannst eine Zeile unter dem Cursor in `vim` mit `:.w !bash` ausführen.
@@ -140,11 +142,11 @@ Bevor die Installation gestartet wird sollte die Liste der Spiegelserver angepas
 Alternativ kann dies auch automatisch erledigt werden:
 
     pacman -Sy reflector
-    reflector --country France --country Germany --age 12 --protocol https --sort rate --verbose --save /etc/pacman.d/mirrorlist
+    reflector -c France -c Germany -a 25 -p https --sort rate --verbose --save /etc/pacman.d/mirrorlist
 
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor vim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 
-    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode systemd-swap 
+    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode systemd-swap zstd
 
 - `base` stellt die grundlegendste Funktionalität bereit
 - `base-devel` beinhaltet `pacman` und Werkzeuge um weitere Software zu installieren und zu bauen
@@ -154,6 +156,7 @@ Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Ins
 - `efibootmgr` um die efi-boot Einstellungen gegebenenfalls zu ändern
 - `intel-ucode` sollte nur auf einer Intel-CPU installiert werden. Auf einer AMD CPU sollte hingegen die `amd-ucode` installiert werden. Dies sind die Microcode-Patches...
 - `systemd-swap` um ein Swap-file automatisch anzulegen
+- `zstd` ist ein schnelles Werkzeug im Dateien zu komprimieren 
 
 Auf einem Notebook sollte zusätzlich `dialog wpa_supplicant` installiert werden, damit sich mit einem W-Lan verbunden werden kann.
 
@@ -244,6 +247,28 @@ Damit dieser Benutzer [Administratorrechte](https://wiki.archlinux.de/title/Sudo
     %wheel   ALL=(ALL) ALL
 
 
+Um auch [32bit Anwendung](https://wiki.archlinux.org/index.php/multilib) installieren zu können muss in der `/etc/pacman.conf` Datei die `multilib` Sektion wieder einkommentiert werden.
+
+    [multilib]
+    Include = /etc/pacman.d/mirrorlist
+
+
+
+Um das Bauen von Paketen mit [makepkg](https://wiki.archlinux.org/index.php/makepkg#tmpfs) etwas zu beschleunigen, muss die `/etc/makepkg.conf` Datei angepasst werden:
+
+    BUILDDIR=/tmp/makepkg
+    PKGEXT='.pkg.tar.zst
+    COMPRESSZST=(zstd -c -q -T0 -18 -)
+    MAKEFLAGS='-j$(nproc)
+
+
+
+Damit das [Journal](https://wiki.archlinux.org/index.php/Systemd/Journal#Journal_size_limit) nicht 4GB groß wird muss dies weiter beschränkt werden. Dazu muss die Datei `/etc/systemd/journald.conf` angepasst werden.
+
+
+    Storage=persistent
+    SystemMaxUse=1G
+    
 
 
 Abschließend muss [mkinitcpio](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_mkinitcpio_2) konfiguriert werden.
