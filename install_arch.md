@@ -78,12 +78,12 @@ Um die Partitionierung zu starten muss `gdisk` mit dem Festplattenpfad ausgefüh
 
     gdisk /dev/sda
 
-Benötigt werden zwei Partitionen eine EFI Partition (`EF00`) mit `500MB` für den Bootvorgang und eine Linux LVM Partition (`8E00`) in der die verschlüsselten Daten liegen werden.
+Benötigt werden zwei Partitionen eine EFI Partition (`EF00`) mit `500MB` für den Bootvorgang und eine Linux Filesystem Partition (`8300`) in der die verschlüsselten Daten liegen werden.
 
-Mit `p` kann die aktuelle Partitionstabelle aufgelistet werden. Mit `d` können bereits vorhandene Partitionen gelöscht werden (jede einzeln). Mit `n` können neue Partitionen angelegt werden. Wobei bei der ersten Partition für den letzten Sektor `500M` gewählt werden soll und für den Typ `EF00`. Bei der zweiten Partition soll für den Typ `8E00` gewählt werden. Bei allen anderen Optionen kann durch Bestätigen der Standardwert übernommen werden. Schließlich kann mit `w` die Partitionstabelle auf die Festplatte geschrieben werden. 
+Mit `p` kann die aktuelle Partitionstabelle aufgelistet werden. Mit `d` können bereits vorhandene Partitionen gelöscht werden (jede einzeln). Mit `n` können neue Partitionen angelegt werden. Wobei bei der ersten Partition für den letzten Sektor `500M` gewählt werden soll und für den Typ `EF00`. Bei der zweiten Partition soll für den Typ `8300` gewählt werden. Bei allen anderen Optionen kann durch Bestätigen der Standardwert übernommen werden. Schließlich kann mit `w` die Partitionstabelle auf die Festplatte geschrieben werden. 
 
 
-**Verschlüsseln der LVM Partition**
+**Verschlüsseln der Root-Partition**
 
 Als erstes muss mit [modprob](https://wiki.archlinux.org/index.php/Kernel_module#Obtaining_information) das `dm-crypt` Modul geladen werden.
 
@@ -104,30 +104,15 @@ Am Besten sollte hier ein komplett zufälliges Passwort mit mehr als 20 Stellen 
 Anschließend kann diese Luks-Partition geöffnet werden.
 
 
-    cryptsetup open --type luks /dev/sda2 cryptlvm
-
-
-Nun muss auf der geöffneten Luks-Partition ein [Physical Volume](https://wiki.archlinux.de/title/LVM#Physical_Volume) erzeugt werden. 
-
-    pvcreate /dev/mapper/cryptlvm
-
-Dieses Volume wird nun zu einer [Volume Group](https://wiki.archlinux.de/title/LVM#Volume_Group), mit dem Namen "vgMain", zusammengefasst.
-
-    vgcreate vgMain /dev/mapper/cryptlvm
-
-Nun kann die Volume Group in [Logische Volumes](https://wiki.archlinux.de/title/LVM#Logical_Volume) aufgeteilt werden. Erstellt werden soll ein Root-Volume und ein Swap-Volume. Das Swap-Volume sollte mindestens so groß sein wie der Arbeitsspeicher. Wie groß der Arbeitsspeicher ist kann mit `free --giga` ermittelt werden.
-
-    lvcreate -L 20GB -n swap vgMain
-    lvcreate -l 100%FREE -n root vgMain
+    cryptsetup open --type luks /dev/sda2 cryptroot
 
 
 
 **Formatieren der Partitionen**
 
-Die root-Partition wird mit ext4 Formatiert. Anschließend wird die Swap Partition formatiert. Abschließend wird die ESP (EFI system Partition) mit Fat32 formatiert.
+Die root-Partition wird mit ext4 Formatiert. Anschließend wird die ESP (EFI system Partition) mit Fat32 formatiert.
 
-    mkfs.ext4 -L root /dev/mapper/vgMain-root
-    mkswap -L swap /dev/mapper/vgMain-swap
+    mkfs.ext4 -L root /dev/mapper/cryptroot
     mkfs.fat -F32 -n EFI /dev/sda1
 
 
@@ -135,10 +120,11 @@ Die root-Partition wird mit ext4 Formatiert. Anschließend wird die Swap Partiti
 
 Damit nun das Arch-System installiert werden kann, müssen die Partitionen auf denen Arch installiert wird eingebunden werden.
 
-    mount /dev/mapper/vgMain-root /mnt
+    mount /dev/mapper/cryptroot /mnt
     mkdir /mnt/boot
     mount /dev/sda1 /mnt/boot
-    swapon /dev/mapper/vgMain-swap
+
+
 
 
 
@@ -158,14 +144,44 @@ Alternativ kann dies auch automatisch erledigt werden:
 
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor vim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 
-    pacstrap /mnt base base-devel linux-firmware linux lvm2 vim zsh efibootmgr intel-ucode
+    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode systemd-swap 
 
-`base` stellt die grundlegendste Funktionalität bereit, `base-devel` beinhaltet `pacman` und Werkzeuge um weitere Software zu installieren und zu bauen. `linux-firmware` liefert firmware für übliche Hardware, und `linux` ist der Kernel. `lvm2` wird benötigt weil die root-Partition damit verwaltet wird.
+- `base` stellt die grundlegendste Funktionalität bereit
+- `base-devel` beinhaltet `pacman` und Werkzeuge um weitere Software zu installieren und zu bauen
+- `linux-firmware` liefert firmware für übliche Hardware
+- `linux` ist der Kernel
+- `vim zsh` sind großartige Werkzeuge
+- `efibootmgr` um die efi-boot Einstellungen gegebenenfalls zu ändern
+- `intel-ucode` sollte nur auf einer Intel-CPU installiert werden. Auf einer AMD CPU sollte hingegen die `amd-ucode` installiert werden. Dies sind die Microcode-Patches...
+- `systemd-swap` um ein Swap-file automatisch anzulegen
 
-Die `intel-ucode` sollten nur auf einer Intel-CPU installiert werden. Auf einer AMD CPU sollte hingegen die `amd-ucode` installiert werden. 
+Auf einem Notebook sollte zusätzlich `dialog wpa_supplicant` installiert werden, damit sich mit einem W-Lan verbunden werden kann.
 
-Auf einem Notebook sollte zusätzlich `dialog wpa_supplicant` installiert werden.
 
+**chrooten**
+
+Nun kann in das neu installierte [System](https://wiki.archlinux.org/index.php/Chroot#firstHeading) gewechselt werden. 
+
+    arch-chroot /mnt
+
+
+**Swap-File aktivieren**
+
+Um ein swap-file zu aktivieren muss folgendes erledigt werden:
+
+In der `/etc/systemd/swap.conf` Datei in der *Swap File Chunked* Sektion muss `swapfc_enabled`auf `1` gesetzt werden. Prüfe die Einstellungen:
+
+    zram_enabled=0
+    zswap_enabled=1
+    swapfc_enabled=1
+
+Um die Performance weiter zu steigern kann die [Swappiness](https://wiki.archlinux.org/index.php/Swap#Swappiness) und die *VFS cache pressure* angepasst werden.
+
+    echo vm.swappiness=5 | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+    echo vm.vfs_cache_pressure=50 | sudo tee -a /etc/sysctl.d/99-sysctl.conf
+    sudo sysctl -p /etc/sysctl.d/99-sysctl.conf
+
+Anschließend muss der Service `systemd-swap` gestartet werden.
 
 **fstab-Tabelle erzeugen**
 
@@ -181,9 +197,6 @@ Um /tmp schneller zu machen kann diese als [Ramdisk](https://wiki.archlinux.de/t
     none /tmp tmpfs defaults,noatime,mode=1777 0 0
 
 
-Nun kann in das neu installierte System [gewechselt](https://wiki.archlinux.org/index.php/Chroot#firstHeading) werden. 
-
-    arch-chroot /mnt
 
 **Basic-Einstellungen**
 
