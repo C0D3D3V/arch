@@ -169,19 +169,18 @@ Nun kann in das neu installierte [System](https://wiki.archlinux.org/index.php/C
 
 Um ein swap-file zu aktivieren muss folgendes erledigt werden:
 
-In der `/etc/systemd/swap.conf` Datei in der *Swap File Chunked* Sektion muss `swapfc_enabled`auf `1` gesetzt werden. Prüfe die Einstellungen:
 
-    zram_enabled=0
-    zswap_enabled=1
-    swapfc_enabled=1
+    fallocate -l 20GiB /mnt/swapfile
+    chmod 600 /mnt/swapfile
+    mkswap -L swap /mnt/swapfile
+    swapon /mnt/swapfile
+
 
 Um die Performance weiter zu steigern kann die [Swappiness](https://wiki.archlinux.org/index.php/Swap#Swappiness) und die *VFS cache pressure* angepasst werden.
 
-    echo vm.swappiness=5 | sudo tee -a /etc/sysctl.d/99-sysctl.conf
-    echo vm.vfs_cache_pressure=50 | sudo tee -a /etc/sysctl.d/99-sysctl.conf
-    sudo sysctl -p /etc/sysctl.d/99-sysctl.conf
+    echo vm.swappiness=5 | tee -a /etc/sysctl.d/99-sysctl.conf
+    echo vm.vfs_cache_pressure=50 | tee -a /etc/sysctl.d/99-sysctl.conf
 
-Anschließend muss der Service `systemd-swap` gestartet werden.
 
 **fstab-Tabelle erzeugen**
 
@@ -195,7 +194,6 @@ Um /tmp schneller zu machen kann diese als [Ramdisk](https://wiki.archlinux.de/t
 
     # tmpfs 
     none /tmp tmpfs defaults,noatime,mode=1777 0 0
-
 
 
 **Basic-Einstellungen**
@@ -281,13 +279,17 @@ Weil nun konfiguriert wurde, dass 'arch' standardmäßig gestartet werden soll m
     linux /vmlinuz-linux
     initrd /intel-ucode.img
     initrd /initramfs-linux.img
-    options cryptdevice=UUID={UUID}:cryptlvm root=/dev/mapper/vgMain-root resume=/dev/mapper/vgMain-swap quiet rw
+    options cryptdevice=UUID={UUID}:cryptroot root=/dev/mapper/cryptroot resume=/dev/mapper/cryptroot resume_offset={swap_file_offset} quiet rw
 
 Um die Geschwindigkeit weiter zu erhöhen kann zu den Optionen bei einer Intel-CPU die Option `intel_pstate=no_hwp` hinzugefügt werden um C0 States (P-states) zu deaktivieren.
 
-Um die UUID inerhalb von vim zu erhalten, es muss komplett `{UUID}` mit der UUID ersetzt werden. Folgendes fügt in `vim`eine Zeile unter dem Cursor die Ausgabe von dem Befehl ein.
+Es muss komplett `{UUID}` mit der UUID ersetzt werden, das selbe gilt für {swap_file_offset}. Folgendes fügt in `vim` eine Zeile unter dem Cursor die Ausgabe von dem Befehl, um die UUID zu erhalten, ein.
 
-    :read ! blkid /dev/sda2
+    :read ! blkid -s UUID /dev/sda2 -o value
+
+Um swap_file_offset zu erhalten genügt folgender Befehl:
+
+    :read ! filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
 
 
 Die letzte Datei `/boot/loader/entries/arch.conf` ist sehr wichtig, überprüfe sie lieber doppelt!
