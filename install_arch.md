@@ -225,17 +225,11 @@ Abschließend muss [mkinitcpio](https://wiki.archlinux.org/index.php/Dm-crypt/En
 
     vim /etc/mkinitcpio.conf
 
-Es muss `MODULES` 'ext4' hinzugefügt werden.
-Dann müssen bei HOOKS folgende Hooks hinzugefügt werden:
 
-- Zwischen `autodetect` und `modconf` muss `keyboard keymap consolefont` hinzugefügt werden
-- Dafür kann der keyboard HOOK nach filesystems entfernt werden
-- Zwischen `block` und `filesystems` muss `encrypt lvm2 resume` hinzugefügt werden. 
-- Am Ende wird `shutdown suspend` nach `fsck` hinzugefügt
+In der Datei muss `MODULES` und `Hooks` wie folgt angepasst werden:
 
-Dies könnte wie folgt aussehen:
-
-    HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt lvm2 resume filesystems fsck shutdown suspend)
+    MODULES=(ext4)
+    HOOKS=(base udev resume keyboard keymap autodetect consolefont modconf block encrypt lvm2 filesystems resume fsck)
 
 Nun muss nur noch das initramfs Abbild neu erstellt werden, wie folgt:
 
