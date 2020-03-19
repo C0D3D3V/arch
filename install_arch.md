@@ -8,7 +8,16 @@ Um das Arch-Abbild auf ein USB-Stick zu schreiben kann wie folgt vorgegangen wer
 
 ## Nach dem booten in das Live-System
 
+Dieses Repository kann mit `git` heruntergeladen werden:
+
+    git colone https://github.com/C0D3D3V/arch.git
+
 Innerhalb des Terminals kann mit [Shift + Bild-Hoch] und entsprechend [Shift + Bild-Runter] gescrollt werden.
+
+Du kannst eine Zeile unter dem Cursor in `vim` mit `:.w !bash` ausführen.
+
+Du kannst diese Datei mit `vim` öffnen und sobald du wieder ins Terminal zurück möchtest [Strg + z] drücken um den Prozess zu pausieren. Mit `jobs` bekommst du eine Liste alle pausierten Prozesse. Mit `fg %job_id` bringst du den Prozess `job_id` wieder in den Fordergrund wobei `job_id` eine id aus der Tabelle von `jobs` ist. 
+
 
 **Schrift temporär vergrößern**
 
@@ -258,7 +267,7 @@ Weil nun konfiguriert wurde, dass 'arch' standardmäßig gestartet werden soll m
 
 Um die Geschwindigkeit weiter zu erhöhen kann zu den Optionen bei einer Intel-CPU die Option `intel_pstate=no_hwp` hinzugefügt werden um C0 States (P-states) zu deaktivieren.
 
-Um die UUID inerhalb von vim zu erhalten, es muss komplett `{UUID}` mit der UUID ersetzt werden.
+Um die UUID inerhalb von vim zu erhalten, es muss komplett `{UUID}` mit der UUID ersetzt werden. Folgendes fügt in `vim`eine Zeile unter dem Cursor die Ausgabe von dem Befehl ein.
 
     :read ! blkid /dev/sda2
 
