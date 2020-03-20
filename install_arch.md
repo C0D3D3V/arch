@@ -14,7 +14,7 @@ Um das Arch-Abbild auf ein USB-Stick zu schreiben kann wie folgt vorgegangen wer
 Dieses Repository kann mit `git` heruntergeladen werden:
 
     loadkeys de-latin1
-    dhcpcd
+    dhcpcd          # Alternativ `wifi-menu` wenn eine W-Lan Verbindung erforderlich ist.
     pacman -Sy git
     git clone https://github.com/C0D3D3V/arch.git
 
@@ -72,7 +72,7 @@ Als nächstes soll sicher gestellt werden, dass das Live-System im [UEFI-Modus](
 
 Um eine [Netzwerkverbindung](https://wiki.archlinux.org/index.php/Network_configuration#Network_management) einzurichten, wird meist bei einer Ethernet-Verbindung eine IP-Adresse über einen im Netz befindenden DHCP-Server zugewiesen. Damit eine Zuweisung erfolgen kann muss der entsprechende Client wie folgt gestartet werden:
 
-    dhcpcd
+    dhcpcd      # Alternativ `wifi-menu` wenn eine W-Lan Verbindung erforderlich ist.
 
 Dann kann mit `ip addr` überprüft werden, ob eine IP-Adresse zugewiesen wurde und mit `ping archlinux.org` getestet werden ob eine Internetverbindung vorhanden ist.
 
