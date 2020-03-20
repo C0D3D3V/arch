@@ -358,7 +358,7 @@ Abschließend muss [mkinitcpio](https://wiki.archlinux.org/index.php/Dm-crypt/En
 In der Datei muss `MODULES` und `Hooks` wie folgt angepasst werden:
 
     MODULES=(ext4)
-    HOOKS=(base udev keyboard keymap autodetect consolefont modconf block encrypt lvm2 filesystems resume fsck)
+    HOOKS=(base udev keyboard keymap autodetect consolefont modconf block encrypt filesystems resume fsck)
 
 Nun muss nur noch das initramfs Abbild neu erstellt werden, wie folgt:
 
