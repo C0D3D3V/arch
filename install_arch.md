@@ -26,7 +26,7 @@ Du kannst eine Zeile unter dem Cursor in `vim` mit `:.w !bash` ausführen.
 
 Du kannst diese Datei mit `vim` öffnen und sobald du wieder ins Terminal zurück möchtest [Strg + z] drücken um den Prozess zu pausieren. Mit `jobs` bekommst du eine Liste alle pausierten Prozesse. Mit `fg %job_id` bringst du den Prozess `job_id` wieder in den Fordergrund wobei `job_id` eine id aus der Tabelle von `jobs` ist. 
 
-
+In `vim` kann mit `:e filename` eine andere Datei geöffnet werden mit `:bn` und `:bp` bzw. `:buffers` kann zwischen geöffneten Dateien gewechselt werden.
 
 
 **Schrift temporär vergrößern**
