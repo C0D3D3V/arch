@@ -6,6 +6,9 @@ Um das Arch-Abbild auf ein USB-Stick zu schreiben kann wie folgt vorgegangen wer
 
     dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress && sync
 
+
+
+
 ## Nach dem booten in das Live-System
 
 Dieses Repository kann mit `git` heruntergeladen werden:
@@ -14,11 +17,16 @@ Dieses Repository kann mit `git` heruntergeladen werden:
 
 Alternativ zu dieser Anleitung kann auch das identische automatische Skript von [hier](https://github.com/C0D3D3V/simpleAui/blob/master/liveinstall) verwendet werden.
 
+
+
+
 Innerhalb des Terminals kann mit [Shift + Bild-Hoch] und entsprechend [Shift + Bild-Runter] gescrollt werden.
 
 Du kannst eine Zeile unter dem Cursor in `vim` mit `:.w !bash` ausführen.
 
 Du kannst diese Datei mit `vim` öffnen und sobald du wieder ins Terminal zurück möchtest [Strg + z] drücken um den Prozess zu pausieren. Mit `jobs` bekommst du eine Liste alle pausierten Prozesse. Mit `fg %job_id` bringst du den Prozess `job_id` wieder in den Fordergrund wobei `job_id` eine id aus der Tabelle von `jobs` ist. 
+
+
 
 
 **Schrift temporär vergrößern**
@@ -33,11 +41,16 @@ Durch folgenden Befehl wird die Font auf eine sehr große Font geändert.
 
     setfont sun12x22
 
+
+
+
 **Temporäres ändern des Tastaturlayouts**
 
 Um zu dem deutschen [Tastaturlayout](https://wiki.archlinux.org/index.php/installation_guide#Set_the_keyboard_layout) zu wechseln verwende
 
     loadkeys de-latin1
+
+
 
 
 
@@ -47,6 +60,9 @@ Als nächstes soll sicher gestellt werden, dass das Live-System im [UEFI-Modus](
 
     efivar --list
 
+
+
+
 **Netzwerkverbindung herstellen**
 
 Um eine [Netzwerkverbindung](https://wiki.archlinux.org/index.php/Network_configuration#Network_management) einzurichten, wird meist bei einer Ethernet-Verbindung eine IP-Adresse über einen im Netz befindenden DHCP-Server zugewiesen. Damit eine Zuweisung erfolgen kann muss der entsprechende Client wie folgt gestartet werden:
@@ -55,6 +71,9 @@ Um eine [Netzwerkverbindung](https://wiki.archlinux.org/index.php/Network_config
 
 Dann kann mit `ip addr` überprüft werden, ob eine IP-Adresse zugewiesen wurde und mit `ping archlinux.org` getestet werden ob eine Internetverbindung vorhanden ist.
 
+
+
+
 **System-Zeit aktualisieren**
 
 Um die [System-Zeit](https://wiki.archlinux.org/index.php/Systemd-timesyncd#Usage) mit der Netzwerkzeit zu synchronisieren, muss der `timesyncd`-Service gestartet werden:
@@ -62,6 +81,9 @@ Um die [System-Zeit](https://wiki.archlinux.org/index.php/Systemd-timesyncd#Usag
     timedatectl set-ntp true
 
 Geprüft werden kann die Zeit mit `timedatectl status`
+
+
+
 
 
 ## Partitionen anlegen und formatieren
@@ -83,6 +105,10 @@ Um die Partitionierung zu starten muss `gdisk` mit dem Festplattenpfad ausgefüh
 Benötigt werden zwei Partitionen eine EFI Partition (`EF00`) mit `500MB` für den Bootvorgang und eine Linux Filesystem Partition (`8300`) in der die verschlüsselten Daten liegen werden.
 
 Mit `p` kann die aktuelle Partitionstabelle aufgelistet werden. Mit `d` können bereits vorhandene Partitionen gelöscht werden (jede einzeln). Mit `n` können neue Partitionen angelegt werden. Wobei bei der ersten Partition für den letzten Sektor `500M` gewählt werden soll und für den Typ `EF00`. Bei der zweiten Partition soll für den Typ `8300` gewählt werden. Bei allen anderen Optionen kann durch Bestätigen der Standardwert übernommen werden. Schließlich kann mit `w` die Partitionstabelle auf die Festplatte geschrieben werden. 
+
+
+
+
 
 
 **Verschlüsseln der Root-Partition**
@@ -110,12 +136,19 @@ Anschließend kann diese Luks-Partition geöffnet werden.
 
 
 
+
+
+
+
 **Formatieren der Partitionen**
 
 Die root-Partition wird mit ext4 Formatiert. Anschließend wird die ESP (EFI system Partition) mit Fat32 formatiert.
 
     mkfs.ext4 -L root /dev/mapper/cryptroot
     mkfs.fat -F32 -n EFI /dev/sda1
+
+
+
 
 
 **Einbinden der Datei-Systeme**
@@ -160,11 +193,20 @@ Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Ins
 Auf einem Notebook sollte zusätzlich `netctl dialog wpa_supplicant` installiert werden, damit sich mit einem W-Lan verbunden werden kann.
 
 
+
+
+
+
+## Basic-Einstellungen
+
 **chrooten**
 
 Nun kann in das neu installierte [System](https://wiki.archlinux.org/index.php/Chroot#firstHeading) gewechselt werden. 
 
     arch-chroot /mnt
+
+
+
 
 
 **Swap-File aktivieren**
@@ -186,6 +228,9 @@ Um die Performance weiter zu steigern kann die [Swappiness](https://wiki.archlin
     echo vm.vfs_cache_pressure=50 | tee -a /etc/sysctl.d/99-sysctl.conf
 
 
+
+
+
 **fstab-Tabelle erzeugen**
 
 Nun kann die `fstab`-[Tabelle](https://wiki.archlinux.org/index.php/Installation_guide#Fstab) angelegt werden:
@@ -200,13 +245,21 @@ Um /tmp schneller zu machen kann diese als [Ramdisk](https://wiki.archlinux.de/t
     none /tmp tmpfs defaults,noatime,mode=1777 0 0
 
 
-**Basic-Einstellungen**
+
+
+
+**Zeit-Einstellungen**
 
 Zunächst wird die [Systemzeit](https://wiki.archlinux.org/index.php/System_time#Time_zone) eingestellt. Wichtig ist hierbei, dass im UEFI die utc-Zeit eingestellt ist. 
 
     ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
     hwclock --systohc --utc
 
+
+
+
+
+**Locales-Einstellungen**
 
 Nun müssen die [locales](https://wiki.archlinux.de/title/Locale#Aktivierung_und_Verwendung) angepasst werden, damit die Texte in der richtigen Sprache angezeigt werden:
 
@@ -228,12 +281,19 @@ Anschließend können die locales wie folgt generiert werden:
 
 
 
+**Host-Einstellungen**
+
 Ein Hostname kann in der Datei `/etc/hostname` gesetzt werden.
 
     vim /etc/hostname
 
 Der Hostname besteht aus einem zusammenhängenden Wort und kann wie eine Domain aufgebaut sein, Beispiel: `MyNotebook`
 
+
+
+
+
+**User-Einstellungen**
 
 Abschließend muss das root-Passwort gesetzt werden und ein neuer Benutzer "MYUSERNAME" hinzugefügt werden.
 
@@ -247,6 +307,11 @@ Damit dieser Benutzer [Administratorrechte](https://wiki.archlinux.de/title/Sudo
 
     %wheel   ALL=(ALL) ALL
 
+
+
+
+
+**Paketverwaltung-Einstellungen**
 
 Um auch [32bit Anwendung](https://wiki.archlinux.org/index.php/multilib) installieren zu können muss in der `/etc/pacman.conf` Datei die `multilib` Sektion wieder einkommentiert werden.
 
@@ -264,6 +329,10 @@ Um das Bauen von Paketen mit [makepkg](https://wiki.archlinux.org/index.php/make
 
 
 
+
+
+**Journal-Einstellungen**
+
 Damit das [Journal](https://wiki.archlinux.org/index.php/Systemd/Journal#Journal_size_limit) nicht 4GB groß wird muss dies weiter beschränkt werden. Dazu muss die Datei `/etc/systemd/journald.conf` angepasst werden.
 
 
@@ -271,6 +340,10 @@ Damit das [Journal](https://wiki.archlinux.org/index.php/Systemd/Journal#Journal
     SystemMaxUse=1G
     
 
+
+
+
+**Init-RAM-Disk (initrd)**
 
 Abschließend muss [mkinitcpio](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_mkinitcpio_2) konfiguriert werden.
 
@@ -287,6 +360,11 @@ Nun muss nur noch das initramfs Abbild neu erstellt werden, wie folgt:
     mkinitcpio -P
 
 Wenn dabei Warnungen beim bauen des Fallback-Abbilds auftreten wie beispielsweise diese Warnung: `==> WARNING: Possibly missing firmware for module: wd719x` oder `==> WARNING: Possibly missing firmware for module: aic94xx` ist das nicht weiter schlimm und kann später durch das installieren der entsprechenden Firmware aus dem AUR behoben werden, falls gewünscht.
+
+
+
+
+
 
 ## Bootloader installieren
 
@@ -319,6 +397,11 @@ Um swap_file_offset zu erhalten genügt folgender Befehl:
 
 
 Die letzte Datei `/boot/loader/entries/arch.conf` ist sehr wichtig, überprüfe sie lieber doppelt!
+
+
+
+
+
 
 ## Fertig :)
 
