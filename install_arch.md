@@ -13,7 +13,10 @@ Um das Arch-Abbild auf ein USB-Stick zu schreiben kann wie folgt vorgegangen wer
 
 Dieses Repository kann mit `git` heruntergeladen werden:
 
-    git colone https://github.com/C0D3D3V/arch.git
+    loadkeys de-latin1
+    dhcpcd
+    pacman -Sy git
+    git clone https://github.com/C0D3D3V/arch.git
 
 Alternativ zu dieser Anleitung kann auch das identische automatische Skript von [hier](https://github.com/C0D3D3V/simpleAui/blob/master/liveinstall) verwendet werden.
 
