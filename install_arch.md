@@ -304,7 +304,7 @@ Abschließend muss das root-Passwort gesetzt werden und ein neuer Benutzer "MYUS
 
     passwd
 
-Wähle ein sehr starkes Passwort, weil dieser User so gut wie nie verwendet wird sollte das Passwort ausreichend stark sein.
+Wähle ein sehr starkes Passwort, weil dieser User so gut wie nie verwendet wird sollte das Passwort stark sein.
 
     useradd -m -g users -G wheel,storage,power,network,uucp -s /bin/zsh MYUSERNAME
 
@@ -344,6 +344,13 @@ Damit das [Journal](https://wiki.archlinux.org/index.php/Systemd/Journal#Journal
     Storage=persistent
     SystemMaxUse=1G
     
+
+**Beep Deaktivieren**
+
+Standardmäßig lässt Linux den PC bei einem Terminal Fehler [Beepen](https://wiki.archlinux.org/index.php/PC_speaker#Disable_PC_Speaker), um das zu deaktivieren muss folgendes gemacht werden:
+
+    echo "blacklist pcspkr" > /mnt/etc/modprobe.d/nobeep.conf
+
 
 
 
@@ -394,9 +401,9 @@ Um die Geschwindigkeit weiter zu erhöhen kann zu den Optionen bei einer Intel-C
 
 Es muss komplett `{UUID}` mit der UUID ersetzt werden, das selbe gilt für {swap_file_offset}. Folgendes fügt in `vim` eine Zeile unter dem Cursor die Ausgabe von dem Befehl, um die UUID zu erhalten, ein.
 
-    :read ! blkid -s UUID /dev/sda2 -o value
+    :read ! blkid -s UUID  -o value /dev/sda2
 
-Um swap_file_offset zu erhalten genügt folgender Befehl:
+Um swap_file_offset zu erhalten genügt folgender Befehl (ja die beiden Punkte der Ausgabe gehören dazu):
 
     :read ! filefrag -v /swapfile | awk '{ if($1=="0:"){print $4} }'
 
