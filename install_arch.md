@@ -22,6 +22,8 @@ Alternativ zu dieser Anleitung kann auch das identische automatische Skript von 
 
 Innerhalb des Terminals kann mit [Shift + Bild-Hoch] und entsprechend [Shift + Bild-Runter] gescrollt werden.
 
+Es wird stark empfohlen vor der Installation [online](https://www.openvim.com/) oder im Livesystem (durch eingabe von `vimtutor`) ein `vim`-Tutorial zu machen, damit die Basics von `vim` klar sind.
+
 Du kannst eine Zeile unter dem Cursor in `vim` mit `:.w !bash` ausführen.
 
 Du kannst diese Datei mit `vim` öffnen und sobald du wieder ins Terminal zurück möchtest [Strg + z] drücken um den Prozess zu pausieren. Mit `jobs` bekommst du eine Liste alle pausierten Prozesse. Mit `fg %job_id` bringst du den Prozess `job_id` wieder in den Fordergrund wobei `job_id` eine id aus der Tabelle von `jobs` ist. 
