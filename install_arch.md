@@ -146,7 +146,7 @@ Alternativ kann dies auch automatisch erledigt werden:
 
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor vim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 
-    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode systemd-swap zstd
+    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode zstd
 
 - `base` stellt die grundlegendste Funktionalität bereit
 - `base-devel` beinhaltet `pacman` und Werkzeuge um weitere Software zu installieren und zu bauen
@@ -154,11 +154,10 @@ Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Ins
 - `linux` ist der Kernel
 - `vim zsh` sind großartige Werkzeuge
 - `efibootmgr` um die efi-boot Einstellungen gegebenenfalls zu ändern
-- `intel-ucode` sollte nur auf einer Intel-CPU installiert werden. Auf einer AMD CPU sollte hingegen die `amd-ucode` installiert werden. Dies sind die Microcode-Patches...
-- `systemd-swap` um ein Swap-file automatisch anzulegen
+- `intel-ucode` sollte nur auf einer Intel-CPU installiert werden. Auf einer AMD CPU sollte hingegen die `amd-ucode` installiert werden. Dies sind die Microcode-Patches.
 - `zstd` ist ein schnelles Werkzeug im Dateien zu komprimieren 
 
-Auf einem Notebook sollte zusätzlich `dialog wpa_supplicant` installiert werden, damit sich mit einem W-Lan verbunden werden kann.
+Auf einem Notebook sollte zusätzlich `netctl dialog wpa_supplicant` installiert werden, damit sich mit einem W-Lan verbunden werden kann.
 
 
 **chrooten**
@@ -170,13 +169,15 @@ Nun kann in das neu installierte [System](https://wiki.archlinux.org/index.php/C
 
 **Swap-File aktivieren**
 
-Um ein swap-file zu aktivieren muss folgendes erledigt werden:
+
+Die Swap-Datei sollte mindestens so groß sein wie der Arbeitsspeicher. Wie groß der Arbeitsspeicher ist kann mit `free --giga` ermittelt werden. Um eine Swap-Datei zu aktivieren muss folgendes erledigt werden:
 
 
     fallocate -l 20GiB /mnt/swapfile
     chmod 600 /mnt/swapfile
     mkswap -L swap /mnt/swapfile
     swapon /mnt/swapfile
+
 
 
 Um die Performance weiter zu steigern kann die [Swappiness](https://wiki.archlinux.org/index.php/Swap#Swappiness) und die *VFS cache pressure* angepasst werden.
