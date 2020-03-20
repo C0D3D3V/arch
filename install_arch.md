@@ -413,8 +413,8 @@ Die letzte Datei `/boot/loader/entries/arch.conf` ist sehr wichtig, überprüfe 
 Abschließend wird folgendes ausgeführt:
 
     exit
-    umount -R /mnt
     swapoff -a
+    umount -R /mnt
     reboot
 
 
