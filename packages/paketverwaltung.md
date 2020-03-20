@@ -1,5 +1,6 @@
+# Paketverwaltung
 
-# System Anwendungen
+Hier geht es um Werkzeuge für die Paketverwaltung
 
 ## Paketverwaltung `pacman`
 
@@ -26,9 +27,20 @@ Um die aktuelle Größe des Paket-Caches zu erhalten, verwende:
 
 Durch die Aktivierung des Services `paccache.timer`, werden unbenutzte Pakete wöchentlich verworfen.
 
-[Desweiteren](https://wiki.archlinux.org/index.php/Pacman/Pacnew_and_Pacsave#pacdiff) ist es mit `pacdiff` nach einem Update möglich die neuen Konfigurationsdateien der Pakete mit dein eigenen zusammenzuführen. 
+    systemctl enable --now paccache.timer
+
+[Desweiteren](https://wiki.archlinux.org/index.php/Pacman/Pacnew_and_Pacsave#pacdiff) ist es mit `pacdiff` nach einem Update möglich die neuen Konfigurationsdateien der Pakete mit dein eigenen zusammenzuführen. Dies sollte nach jedem Update erledigt werden.
 
 
 
 
+
+
+## Reflector - Spiegelserver-Liste sortieren nach top-speed
+
+[reflector](https://wiki.archlinux.org/index.php/Reflector) ist ein Werkzeug um die Spiegelserverliste nach Geschwindigkeit zu sortieren. Durch eine so sortierte Liste dauert das herunterladen von Updates und neuen Paketen erheblich kürzer.
+
+    + reflector
+
+Ein einzelner Aufruf kann wie folgt aussehen: `reflector --country France --country Germany --age 25 --protocol https --sort rate --verbose --save /etc/pacman.d/mirrorlist`. Wobei man selbst bewerten muss aus welchen Servern die Liste bestehen soll.
 

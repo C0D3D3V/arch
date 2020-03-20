@@ -2,6 +2,9 @@
 
 # This is a script to force update... Not recommended for usual updates
 
+# update mirrorlist
+sudo reflector --country France --country Germany --age 25 --protocol https --sort rate --verbose --save /etc/pacman.d/mirrorlist
+
 # updating pgp keyring
 sudo pacman -Sy --noconfirm archlinux-keyring 
 sudo pacman-key --populate archlinux
