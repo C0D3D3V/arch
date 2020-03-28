@@ -29,7 +29,7 @@ Durch die Aktivierung des Services `paccache.timer`, werden unbenutzte Pakete w�
 
     systemctl enable --now paccache.timer
 
-[Desweiteren](https://wiki.archlinux.org/index.php/Pacman/Pacnew_and_Pacsave#pacdiff) ist es mit `pacdiff` nach einem Update möglich die neuen Konfigurationsdateien der Pakete mit dein eigenen zusammenzuführen. Dies sollte nach jedem Update erledigt werden.
+[Desweiteren](https://wiki.archlinux.org/index.php/Pacman/Pacnew_and_Pacsave#pacdiff) ist es mit `pacdiff` nach einem Update möglich die neuen Konfigurationsdateien der Pakete mit dein eigenen zusammenzuführen. Dies sollte nach jedem Update erledigt werden. `pacdiff -o` listet alle in Konflikt stehenden Dateien auf.
 
 
 

@@ -123,7 +123,7 @@ Als erstes muss mit [modprob](https://wiki.archlinux.org/index.php/Kernel_module
     modprobe dm-crypt
 
 
-Bevor die Partition verschlüsselt wird sollte überprüft werden ob genug [Entropie](https://wiki.archlinux.org/index.php/Random_number_generation#/dev/random) für `/dev/random` vorhanden ist. Wenn weniger als 200 Entropie vorhanden ist, kann durch Tastatur und Mauseingaben sowie beispielsweise durch das öffnen von Dateien und Auflisten von Ordnern Entropie erzeugt werden.
+Bevor die Partition verschlüsselt wird sollte überprüft werden ob genug [Entropie](https://wiki.archlinux.org/index.php/Random_number_generation#/dev/random) für `/dev/random` vorhanden ist. Wenn weniger als 200 Entropie vorhanden ist, kann durch Tastatur und **Mauseingaben** sowie beispielsweise durch das öffnen von Dateien und Auflisten von Ordnern Entropie erzeugt werden.
 
     cat /proc/sys/kernel/random/entropy_avail
 
@@ -184,7 +184,7 @@ Alternativ kann dies auch automatisch erledigt werden:
 
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor vim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 
-    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode zstd
+    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode zstd dhcpcd
 
 - `base` stellt die grundlegendste Funktionalität bereit
 - `base-devel` beinhaltet `pacman` und Werkzeuge um weitere Software zu installieren und zu bauen
@@ -194,6 +194,7 @@ Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Ins
 - `efibootmgr` um die efi-boot Einstellungen gegebenenfalls zu ändern
 - `intel-ucode` sollte nur auf einer Intel-CPU installiert werden. Auf einer AMD CPU sollte hingegen die `amd-ucode` installiert werden. Dies sind die Microcode-Patches.
 - `zstd` ist ein schnelles Werkzeug im Dateien zu komprimieren 
+- `dhcpcd` um auch im neuen System eine IP-Adresse dynamisch zugewiesen zu bekommen
 
 Auf einem Notebook sollte zusätzlich `netctl dialog wpa_supplicant` installiert werden, damit sich mit einem W-Lan verbunden werden kann.
 

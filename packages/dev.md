@@ -1,10 +1,17 @@
 # Entwicklungs-Werkzeuge
 
+## Versionskontrollsystem
+
+Eines er besten Versionskontrollsystem ist `git`. Git ist sehr einfach zu bedienen.
+
+    + git
+
+
 ## Datei-Vergleichswerkzeuge
 
 ### Im Terminal
 
-    + colordiff 
+    + colordiff
 
 Mit `colordiff` ist es im Terminal möglich zwei  Dateien zu vergleichen. Dabei werden Unterschiede farblich dargestellt. Änderungen anzuwenden ist nicht möglich, es sind nur verschiedene Ausgaben möglich.
 

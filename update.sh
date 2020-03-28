@@ -16,6 +16,6 @@ yay -Syu --devel --timeupdate --noconfirm --noremovemake --cleanafter --norebuil
 sudo pacman -Rcns --noconfirm $(pacman -Qtdq)
 # this will delete the complete package cache and is not recommended to do usually
 sudo paccache -r -k 0
-sudo pacman -Scc --noconfirm
+sudo yay -Scc --noconfirm
 
 

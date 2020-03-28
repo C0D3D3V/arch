@@ -4,6 +4,9 @@ Es gibt viele verschiedene [Hilfsprogramme](https://wiki.archlinux.de/title/AUR_
 
 [yay](https://github.com/Jguer/yay) ist eines davon. Zur Installation von `yay` muss folgendes gemacht werden:
 
+    pacman -Sy git
     git clone https://aur.archlinux.org/yay.git
     cd yay  
     sudo makepkg -si
+    cd ..
+    rm yay -rf
