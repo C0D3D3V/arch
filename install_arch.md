@@ -325,6 +325,10 @@ Um auch [32bit Anwendung](https://wiki.archlinux.org/index.php/multilib) install
     [multilib]
     Include = /etc/pacman.d/mirrorlist
 
+Auch in dieser Datei können Farben für Pacman aktiviert werden indem von `#Color` das Kommentarzeichen entfernt wird.
+
+    Color
+
 
 
 Um das Bauen von Paketen mit [makepkg](https://wiki.archlinux.org/index.php/makepkg#tmpfs) etwas zu beschleunigen, muss die `/etc/makepkg.conf` Datei angepasst werden:

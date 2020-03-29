@@ -14,7 +14,7 @@ Nun kann die Schlüsseldatei als Schlüssel hinzugefügt werden:
 
     cryptsetup luksAddKey /dev/sda2 /media/usbstick/mykeyfile
 
-Damit der USB-Stick während dem Boot erkannt wird, muss das entsprechende Dateisystem während dem Boot geladen werden. Dazu wird die `/etc/mkinitcpio.conf` Datei angepasst, zu den `MODULES` wird `vfat` hinzugefügt. Anschließend kann die initrd neu gebaut werden. 
+Damit der USB-Stick während dem Boot erkannt wird, muss das entsprechende Dateisystem während dem Boot geladen werden. Dazu wird die `/etc/mkinitcpio.conf` Datei angepasst, zu den `MODULES` wird `vfat` hinzugefügt. Anschließend kann das initramfs Abbild neu gebaut werden. 
 
     sudo mkinitcpio -P
 
