@@ -27,7 +27,7 @@ Natürlich kann auch `vim` oder `emacs` als diff-Werkzeug verwendet werden.
 
     + meld
 
-`meld` ist eine gute schnelle und sichere Anwendung um Dateien zu vergleichen und zusammenzuführen. 
+`meld` ist eine gute schnelle und sichere Anwendung um [Dateien zu vergleichen](https://wiki.archlinux.org/index.php/List_of_applications#Comparison,_diff,_merge) und zusammenzuführen. 
 
 <!--
 `meld` wurde mit folgenden Alternativen verglichen: 

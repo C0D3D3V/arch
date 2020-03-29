@@ -21,7 +21,7 @@ Um Fotos zu verwalten kommt man sicher nicht um [digiKam](https://wiki.archlinux
 
 ## Fotobetrachter
 
-Um Fotos zu betrachten gibt es verschiedenste Werkzeuge `geeqie`, `gthumb` sind beide sehr gut. Am meisten überzeugt hat mich jedoch `gwenview`.
+Um [Fotos zu betrachten](https://wiki.archlinux.org/index.php/List_of_applications#Image_viewers) gibt es verschiedenste Werkzeuge `geeqie`, `gthumb` sind beide sehr gut. Am meisten überzeugt hat mich jedoch `gwenview`.
 
     + gwenview
     + kimageformats
@@ -38,3 +38,11 @@ Optional:
     - kipi-plugins      # export zu online services
 
 -->
+
+
+
+## Screenshots
+
+[Screenshots](https://wiki.archlinux.org/index.php/Screen_capture#Desktop_environment_specific) müssen früher oder Später gemacht werden, standardmäßig werden diese von Linux nicht in die Zwischenablage wie bei Windows kopiert. Stattdessen ist jeder Desktop/Windowmanger selbst verantwortlich was beim drücken der "Drucken" Taste passiert. Ein gutes Screenshot-Programm ist `gnome-screenshot`, besser ist jedoch wegen den etwas besseren Funktionen `spectacle`:
+
+    + spectacle

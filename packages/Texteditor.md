@@ -2,13 +2,13 @@
 
 # Terminal
 
-Vim ist und bleibt ein sehr guter Terminal-Texteditor. Vim ist extrem konfigurierbar.
+Vim ist und bleibt ein sehr guter [Terminal-Texteditor](https://wiki.archlinux.org/index.php/List_of_applications#Console_19). Vim ist extrem konfigurierbar.
 
     + vim
 
 # GUI
 
-Sublime ist ein Texteditor mit sehr vielen Funktionen und ist dennoch sehr schnell.
+Sublime ist ein [Texteditor](https://wiki.archlinux.org/index.php/List_of_applications#Graphical_19) mit sehr vielen Funktionen und ist dennoch sehr schnell.
 
     + sublime-text-dev
     + gksu
