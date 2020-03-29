@@ -1,4 +1,4 @@
-# Boot Splash-Screen
+# Splash-Screen und Displaymanager
 
 
 ## Boot Splash-Screen
