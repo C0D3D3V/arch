@@ -67,3 +67,29 @@ Es gibt verschiedene [Druckerverwaltungsprogramme](https://wiki.archlinux.org/in
     + python-pysmbc
 
 * `python-pysmbc` damit Drucker auch über SMB gefunden werden können.
+
+
+## Scannen
+
+Scannen ist unter Linux super einfach mit [SANE](https://wiki.archlinux.org/index.php/SANE).
+
+    + sane
+
+Alle verfügbaren Scanner können mit `scanimage -L` aufgelistet werden.
+
+Wenn der Scanner nicht gefunden wird kann [im Wiki](https://wiki.archlinux.org/index.php/SANE/Scanner-specific_problems) nach einer Lösung gesucht werden.
+
+## Scan-GUI
+
+Es gibt verschiedene [GUIs](https://wiki.archlinux.org/index.php/SANE#Install_a_frontend) für SANE. Welche davon am besten funktioniert hängt vom Anwendungsfall ab. Xsane ist zwar voll mit Funktionen aber so gut wie unbrauchbar, wegen der schlechten Benutzerfreundlichkeit. `simple-scan` ist hingegen viel einfacher zu verwenden.
+
+    + simple-scan
+
+Um Dokumente mit [OCR](https://wiki.archlinux.org/index.php/list_of_applications#OCR_software) zu versehen eignet sich `OCRFeeder` gut auch wenn es nicht immer ganz einfach zu bedienen ist. Zusammen mit `tesseract` erzielt man recht gute Ergebnisse.
+
+    + ocrfeeder
+    + tesseract
+    + tesseract-data-deu
+    + tesseract-data-eng
+
+* `tesseract-data-deu` und `tesseract-data-eng` sind die entsprechenden Wörterbücher für `tesseract`.
