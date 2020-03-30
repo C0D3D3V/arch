@@ -19,3 +19,9 @@ Arch-Linux bietet eine ganze Menge an [Raster-Grafik-Editoren](https://wiki.arch
 
     + kolourpaint
 
+
+## Vektor-Grafik-Editor
+
+Inkscape ist wohl der bekannteste Editor für Vektorgrafiken. LibreOffice Draw ist ein weiterer nützlicher Editor und wird mit LibreOffice mitinstalliert. [sK1-git](https://sk1project.net/) ist eine starke alternative zu `inkscape`.
+
+    + inkscape

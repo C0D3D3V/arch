@@ -14,7 +14,7 @@ Bisher gibt es wenige gute Alternativen zu [Libre-Office](https://wiki.archlinux
 
 * `libreoffice-fresh-de` damit die Deutsche Sprache verfügbar wird.
 * `libpaper` kümmert sich um die Papiergrößen
-* `hunspell` ist das Wörterbuch das Libreoffice verwendet. `hunspell-de` ist das entsprechend Deutsche Wörterbuch
+* `hunspell` ist das [Wörterbuch](https://wiki.archlinux.de/title/LibreOffice#Rechtschreibpr.C3.BCfung_.26_Co.) das Libreoffice verwendet. `hunspell-de` ist das entsprechend Deutsche Wörterbuch
 * `hyphen` ist eine Libary zum Überprüfen von Silbentrennung. `hyphen-de` entsprechend für die Deutsche Silbentrennung.
 * `libmythes` ist eine Libary zum erkennen von sehr bekannten Eigenwörtern, `mythes-de` entsprechend für die deutschen.
 
