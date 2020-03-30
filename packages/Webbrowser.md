@@ -8,4 +8,4 @@ Es gibt unzählige [verschiedene Webbrowser](https://wiki.archlinux.org/index.ph
 
 Essentielle Add-Ons bzw. Erweiterungen:
 
-    - uBlock Origin
+    * uBlock Origin

@@ -5,7 +5,7 @@ Bisher gibt es wenige gute Alternativen zu [Libre-Office](https://wiki.archlinux
     + libreoffice-fresh
     + libpaper
 
-`libpaper` kümmert sich um die Papiergrößen
+* `libpaper` kümmert sich um die Papiergrößen
 
 <!--
 
