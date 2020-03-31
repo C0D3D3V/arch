@@ -11,6 +11,7 @@ Um BitTorrents herunterzuladen gibt es eine [Vielzahl von Clients](https://wiki.
 
 Es gibt viele verschiedene [Download-Manager](https://wiki.archlinux.org/index.php/list_of_applications#Download_managers) die sich in [vielen Punkten](https://en.wikipedia.org/wiki/Comparison_of_download_managers) unterscheiden.
 
+    + jdownloader2
 
 
 ## Youtube-Videos

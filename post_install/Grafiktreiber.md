@@ -18,13 +18,34 @@ Für GeForce GTX 660 ist es also ausreichen `nvidia` zu installieren.
 
     + nvidia
     + lib32-nvidia-utils
+    + xorg-xrandr
 
 `lib32-nvidia-utils` wird benötigt um auch 32 Bit Anwendungen zu unterstützen.
+`xrandr` um die Beischirmeinstellungen automatisch einzurichten.
 
+Weil LightDm verwendet wird sollte die Konfiguration [von lightdm](https://wiki.archlinux.org/index.php/NVIDIA_Optimus#LightDM) angepasst werden: 
+
+Dazu wird erst ein Skript erstellt unter `/etc/lightdm/display_setup.sh`:
+
+    #!/bin/sh
+    xrandr --setprovideroutputsource modesetting NVIDIA-0
+    xrandr --auto
+
+Anschließend muss das Skript als ausführbar markiert werden:
+
+    sduo chmod +x /etc/lightdm/display_setup.sh
+
+Dann kann es in der lightDm Konfiguration `/etc/lightdm/lightdm.conf` hinzugefügt werden:
+
+
+    [Seat:*]
+    display-setup-script=/etc/lightdm/display_setup.sh
+
+<!--
 Zunächst sollte eine einfache Konfiguration für xorg erstellt werden
 
     sudo nvidia-xconfig
-
+-->
 
 Anschließend muss die `/etc/mkinitcpio.conf` Datei angepasst werden. Zu den `MODULES` muss der Kernel-Grafiktreiber `nvidia` hinzugefügt werden. 
 
