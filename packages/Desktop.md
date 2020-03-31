@@ -37,7 +37,9 @@ Des Weiteren können folgende Erweiterungen aktiviert werden:
 * `Workspace Indicator` zeigt an in welchem Workspace man sich befindet.
 
 
+GOME legt zwei Sessions für Xorg an eine davon kann entfernt werden:
 
+    sudo rm /usr/share/xsessions/gnome.desktop
 
 ## KDE
 

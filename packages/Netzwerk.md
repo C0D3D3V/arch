@@ -18,3 +18,17 @@ Um Netzwerke generell zu verwalten ist [NetworkManager](https://wiki.archlinux.o
 Anschließend muss noch der entsprechende Service aktiviert werden:
 
     systemctl enable --now NetworkManager
+
+## VPN 
+
+Um Verbindung mit dem weit verbreiteten OpenVPN herzustellen ist `openvpn` gut geeignet. Es gibt noch [viele weitere Clients](https://wiki.archlinux.org/index.php/list_of_applications#VPN_clients).
+
+    + openvpn
+
+## Anonymisierungs-Netzwerke
+
+Ein gutes Anonymisierungs-Netzwerk ist [tor](https://wiki.archlinux.org/index.php/Tor). Es gibt [viele andere](https://wiki.archlinux.org/index.php/list_of_applications#Anonymizing_networks).
+
+    + tor
+    + torbrowser-launcher
+

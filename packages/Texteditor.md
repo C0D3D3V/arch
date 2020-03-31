@@ -8,14 +8,22 @@ Vim ist und bleibt ein sehr guter [Terminal-Texteditor](https://wiki.archlinux.o
 
 # GUI
 
-Sublime ist ein [Texteditor](https://wiki.archlinux.org/index.php/List_of_applications#Graphical_19) mit sehr vielen Funktionen und ist dennoch sehr schnell.
+Es gibt viele [verschiedene Texteditoren](https://en.wikipedia.org/wiki/Comparison_of_text_editors). Beleibt sind `Visual Studio Code`, `gedit`, `Kate` und `jEdit`, aber auch viele andere. Ich bevorzuge Visual Studio Code:
 
-    + sublime-text-dev
-    + gksu
+    + kate
+    + clang
+    + python-language-server
+    + python-rope
+    + python-pyflakes
+    + flake8
+    + yapf
+    + python-pydocstyle
+    + texlab
 
-`gksu` ermöglicht dass Dateien auch als root gespeichert werden können.
+* `clang` für C/C++ LSP suport
+* `python-language-server` für PYthon LSP support
+* `python-rope` completion und renaming. `python-pyflakes` linter und Fehlererkennung. `flake8` linter. `yapf` code formating. `python-pydocstyle` docstring checking.
+* `texlab` für latex lsp support
 
-Um die Updatemeldung zu deaktivieren kann in Preferences -> Settings
-folgendes hinzugefügt werden:
 
-    "update_check": false
+
