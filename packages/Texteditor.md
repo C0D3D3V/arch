@@ -8,7 +8,7 @@ Vim ist und bleibt ein sehr guter [Terminal-Texteditor](https://wiki.archlinux.o
 
 # GUI
 
-Es gibt viele [verschiedene Texteditoren](https://en.wikipedia.org/wiki/Comparison_of_text_editors). Beleibt sind `Visual Studio Code`, `gedit`, `Kate` und `jEdit`, aber auch viele andere. Ich bevorzuge Visual Studio Code:
+Es gibt viele [verschiedene Texteditoren](https://en.wikipedia.org/wiki/Comparison_of_text_editors). Beleibt sind `Visual Studio Code`, `gedit`, `Kate` und `jEdit`, aber auch viele andere. Ich bevorzuge Kate:
 
     + kate
     + clang
