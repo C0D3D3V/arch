@@ -33,3 +33,16 @@ Als Alternative zu `find` eignet sich `fd`:
 
     + fzf
 
+## Ausgabe von Dateien
+
+Als Alternative zu `cat` eignet sich `bat`: 
+
+    + bat
+
+Alias:
+    
+    alias cat="bat"
+
+## Report wrong spelling
+
+    + thefuck
