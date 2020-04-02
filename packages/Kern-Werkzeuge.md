@@ -43,6 +43,6 @@ Alias:
     
     alias cat="bat"
 
-## Report wrong spelling
+## Verbessern von falsch eingegebenen Befehlen
 
     + thefuck
