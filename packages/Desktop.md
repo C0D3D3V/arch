@@ -1,6 +1,8 @@
 # Alles rund um den Desktop
 
-## GNOME
+
+<!--
+## GNOME - Wurde entfernt, weil ich es nicht geschafft habe dass der Display ordentlich gesperrt wird
 
 Folgende Pakete erachte ich als essentiell um [Gnome](https://wiki.archlinux.de/title/GNOME) zu verwenden.
 
@@ -11,6 +13,7 @@ Folgende Pakete erachte ich als essentiell um [Gnome](https://wiki.archlinux.de/
     + mutter
     + gnome-tweaks
     + gnome-shell-extensions
+    + gnome-screensaver
 
 * `gnome-backgrounds` liefert verschiedene Hintergründe und Dateien für Gnome. 
 * Mit `gnome-control-center` lassen sich grundlegende Einstellungen an Gnome vornehmen. 
@@ -19,6 +22,7 @@ Folgende Pakete erachte ich als essentiell um [Gnome](https://wiki.archlinux.de/
 * `mutter` ist der Window-Manager von Gnome.
 * `gnome-tweaks` bietet [weitere Gnome Einstellungen](https://wiki.archlinux.de/title/GNOME#Tipps_und_Tricks)
 * `gnome-shell-extensions` erlaubt das ändern des Themes der Gnome-Shell und fügt paar einfache Erweiterungen hinzu.
+* `gnome-screensaver` ermöglicht das sperren des Displays
 
 
 
@@ -40,6 +44,9 @@ Des Weiteren können folgende Erweiterungen aktiviert werden:
 GOME legt zwei Sessions für Xorg an eine davon kann entfernt werden:
 
     sudo rm /usr/share/xsessions/gnome.desktop
+
+-->
+
 
 ## KDE
 
