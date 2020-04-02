@@ -14,7 +14,7 @@ Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Paket
 
 Und anschließend alle Services aktivieren:
 
-`cat packages/* | sed -n -e "s/^[ \t]*systemctl enable --now[ \t]*//gp" | xargs systemctl enable --now`
+`cat packages/* | sed -n -e "s/^[ \t]*systemctl enable --now[ \t]*//gp" | xargs systemctl enable`
 
 
  
