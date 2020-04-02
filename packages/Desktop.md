@@ -6,14 +6,14 @@
 
 Folgende Pakete erachte ich als essentiell um [Gnome](https://wiki.archlinux.de/title/GNOME) zu verwenden.
 
-    + gnome-backgrounds
-    + gnome-control-center
-    + gnome-menus
-    + gnome-shell
-    + mutter
-    + gnome-tweaks
-    + gnome-shell-extensions
-    + gnome-screensaver
+    - gnome-backgrounds
+    - gnome-control-center
+    - gnome-menus
+    - gnome-shell
+    - mutter
+    - gnome-tweaks
+    - gnome-shell-extensions
+    - gdm
 
 * `gnome-backgrounds` liefert verschiedene Hintergründe und Dateien für Gnome. 
 * Mit `gnome-control-center` lassen sich grundlegende Einstellungen an Gnome vornehmen. 
@@ -22,13 +22,13 @@ Folgende Pakete erachte ich als essentiell um [Gnome](https://wiki.archlinux.de/
 * `mutter` ist der Window-Manager von Gnome.
 * `gnome-tweaks` bietet [weitere Gnome Einstellungen](https://wiki.archlinux.de/title/GNOME#Tipps_und_Tricks)
 * `gnome-shell-extensions` erlaubt das ändern des Themes der Gnome-Shell und fügt paar einfache Erweiterungen hinzu.
-* `gnome-screensaver` ermöglicht das sperren des Displays
+* `gdm` ermöglicht das sperren des Displays
 
 
 
 Sinnvolle Erweiterungen:
 
-    + gnome-shell-extension-dash-to-panel
+    - gnome-shell-extension-dash-to-panel
 
 * `dash-to-panel` fügt eine nette Taskleiste hinzu
 
