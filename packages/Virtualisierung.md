@@ -5,4 +5,3 @@ Virtualisierung mit [Virtualbox](https://wiki.archlinux.org/index.php/VirtualBox
     + virtualbox-host-modules-arch
     + virtualbox 
     + virtualbox-guest-iso
-    

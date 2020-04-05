@@ -5,6 +5,7 @@
 Terminals sind unter Linux wichtiger als in anderen Betriebssystemen weil damit effektiv und schnell gearbeitet werden kann. Damit dies auch wirklich möglich ist muss man sich für die Werkzeuge entscheiden die man als gut erachtet.
 
     + zsh
+    + zsh-completions
     + antigen-git
 
 * `antigen-git` als plugin manager

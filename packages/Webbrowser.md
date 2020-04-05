@@ -10,3 +10,6 @@ Essentielle Add-Ons bzw. Erweiterungen:
 
     * uBlock Origin
     * KeePassXC-Browser
+    * HTTPS-Everywhere
+
+Ich empfehle Passwörter nicht direkt im Browser abzuspeichern sondern lieber in KeepassXC welches Passwörter sicherer verwalten kann.

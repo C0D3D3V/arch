@@ -20,6 +20,9 @@ Bisher gibt es wenige gute Alternativen zu [Libre-Office](https://wiki.archlinux
 * `libmythes` ist eine Libary zum erkennen von sehr bekannten Eigenwörtern, `mythes-de` entsprechend für die deutschen.
 * `libreoffice-extension-languagetool` ist ein Grammatikprüfer
 
+In den Optionen kann unter `LibreOffice -> Ansicht` der Symbolstil auf `Breeze (SVG + dark)` gestellt werden. Des weiteren sollte rechts daneben `Grafikausgabe` auf `OpenGL für das Rendern` aktiviert werden.  `Kantenglättung verwenden` kann nach belieben deaktiviert werden.
+
+
 <!--
 
 Optional: 
