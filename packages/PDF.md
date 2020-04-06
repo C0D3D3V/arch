@@ -16,7 +16,14 @@ Beliebte Programme um PDF-Dateien zu betrachten sind `Okular`, `Atril`, `Evince`
 
     + okular
     + kdegraphics-mobipocket
-    * calligra
+
 
 * `kdegraphics-mobipocket` mobi support
-* `calligra` ODT und ODP support
+
+<!-- 
+Optional:
+
+
+    - calligra
+* `calligra` ODT und ODP support, calligra ist eine Alternative für LibreOffice
+-->
