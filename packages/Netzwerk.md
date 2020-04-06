@@ -14,6 +14,9 @@ Wobei `interface` eines der installierten Interfaces ist welche durch `ip link` 
 Um Netzwerke generell zu verwalten ist [NetworkManager](https://wiki.archlinux.org/index.php/NetworkManager) besonders gut geeignet.
 
     + networkmanager
+    + network-manager-applet
+  
+* `network-manager-applet` ist eine Desktop unabhängiges Applet mit dem Netzwerke einfach verwaltet werden können.
 
 Anschließend muss noch der entsprechende Service aktiviert werden:
 
@@ -24,6 +27,9 @@ Anschließend muss noch der entsprechende Service aktiviert werden:
 Um Verbindung mit dem weit verbreiteten OpenVPN herzustellen ist `openvpn` gut geeignet. Es gibt noch [viele weitere Clients](https://wiki.archlinux.org/index.php/list_of_applications#VPN_clients).
 
     + openvpn
+    + networkmanager-openvpn
+
+* `networkmanager-openvpn` um mit einem VPN eine Verbindung aufzunehmen.
 
 ## Anonymisierungs-Netzwerke
 

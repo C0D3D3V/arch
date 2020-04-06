@@ -46,3 +46,13 @@ Alias:
 ## Verbessern von falsch eingegebenen Befehlen
 
     + thefuck
+
+## Terminal Taskmanager
+
+ Als alternative zu `top` eignet sich `htop`
+
+    + htop
+  
+Alias:
+
+    alias top="htop"

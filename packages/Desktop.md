@@ -82,12 +82,16 @@ Um das Aussehen weiter zu optimieren:
 
 Erweiterungen die hilfreich sind:
 
-    + plasma-nm
     + plasma-pa
 
-* `plasma-nm` Netzwerkmanager Applet für KDE
 * `plasma-pa` Audiomanager Applet für KDE
 
+<!--
+    plasma-nm ist nervig, stattdessen einfach nm-applet zum Autostart hinzufügen
+    
+    - plasma-nm
+* `plasma-nm` Netzwerkmanager Applet für KDE
+>
 
 ## I3 
 
