@@ -73,10 +73,12 @@ Um das Aussehen weiter zu optimieren:
     + kde-gtk-config
     + xsettingsd
     + breeze-gtk
+    + papirus-icon-theme
 
 * `kde-gtk-config` um das Aussehen von GTK Anwendungen einzustellen
 + `xsettingsd` um Anpassungen am Aussehen von GTK-Anwendungen direkt durchzuführen
 * `breeze-gtk` Breeze Theme für GTK-Anwendungen
+* `papirus-icon-theme` für schönere Icons
 
 Erweiterungen die hilfreich sind:
 
