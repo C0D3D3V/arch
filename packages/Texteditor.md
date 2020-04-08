@@ -23,6 +23,8 @@ Um [Markdown-Werkzeuge](https://marketplace.visualstudio.com/items?itemName=yzha
 
 
 <!--
+Um [Zeilen sortieren](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines) zu können: [Strg + P] und `ext install Tyriar.sort-lines` eingeben.
+
 Ich habe Kate getestet aber die Community ist einfach zu klein:
 
     - kate
