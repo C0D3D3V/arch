@@ -3,12 +3,17 @@
 
 ## Boot Splash-Screen
 
-Linux hat ohne [plymouth](https://wiki.archlinux.org/index.php/plymouth) keinen Splash-Screen während dem Bootvorgang, stattdessen wird beim Booten die Terminaltausgabe präsentiert. Damit ein schöner Ladebildschirm dargestellt wird, muss zunächst `plymouth-git` installiert werden.
+Linux hat ohne [plymouth](https://wiki.archlinux.org/index.php/plymouth) keinen Splash-Screen während dem Bootvorgang, stattdessen wird beim Booten die Terminaltausgabe präsentiert. Damit ein schöner Ladebildschirm dargestellt wird, muss zunächst `plymouth` installiert werden.
 
-    + plymouth-git
+    + plymouth
     + ttf-dejavu
 
 Die Font `ttf-dejavu` wird zum korrekten darstellen gebraucht.
+
+Es gibt eine riesige [Auswahl an Ladebildschirmen](https://github.com/adi1090x/plymouth-themes) eines dieser Themes kann aus dem [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=plymouth-theme-&outdated=&SB=n&SO=a&PP=50&do_Search=Go) heruntergeladen werden. `plymouth-theme-abstract-ring-git` ist ganz ansprechend, `plymouth-theme-angular-git` auch.
+
+    + plymouth-theme-abstract-ring-git
+    + plymouth-theme-angular-git
 
 Anschließend muss die `/etc/mkinitcpio.conf` Datei angepasst werden.
 
@@ -24,17 +29,24 @@ Dann müssen die Kernel-Parameter angepasst werden. Dazu werden in `/boot/loader
 
     quiet splash loglevel=3 rd.udev.log_priority=3
 
+<!--
 Um das Arch-Logo beim Boot darzustellen muss dieses entsprechend platziert werden:
 
     cp /usr/share/plymouth/arch-logo.png /usr/share/plymouth/themes/spinner/watermark.png
+ -->
  
 Abschließend muss `plymouth` konfiguriert werden, dazu wird `/etc/plymouth/plymouthd.conf` bearbeitet:
 
     [Daemon]
-    Theme=spinner
+    Theme=abstract-ring
     ShowDelay=0
     DeviceTimeout=8
 
+Alternativ kann `angular` statt `abstract-ring` verwendet werden.
+
+Anschließend muss das Initrmfs Abbild neu gebaut werden:
+
+    sudo mkinitcpio -P
 
 ## Display-Manager
 
