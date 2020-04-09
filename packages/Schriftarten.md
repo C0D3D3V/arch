@@ -15,6 +15,10 @@
 
     + gnu-free-fonts
   
+## CJK-Fonts
+
+    + noto-fonts-cjk
+
 ## Emoji-Fonts
 
     + noto-fonts-emoji
