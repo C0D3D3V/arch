@@ -16,6 +16,8 @@ Nun kann die Schlüsseldatei als Schlüssel hinzugefügt werden:
 
 Damit der USB-Stick während dem Boot erkannt wird, muss das entsprechende Dateisystem während dem Boot geladen werden. Dazu wird die `/etc/mkinitcpio.conf` Datei angepasst, zu den `MODULES` wird `vfat` hinzugefügt. Anschließend kann das initramfs Abbild neu gebaut werden. 
 
+    MODULES=(vfat ...)
+
     sudo mkinitcpio -P
 
 Damit während dem Boot bekannt wird welche Datei als Schlüsseldatei verwendet werden soll, müssen den Kernel-Parameter in `/boot/loader/entries/arch.conf` angepasst werden. Zusätzlich muss folgende Option angefügt werden:

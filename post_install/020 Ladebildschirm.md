@@ -57,6 +57,8 @@ Ein guter [Displaymanger](https://wiki.archlinux.org/index.php/Display_manager) 
     + lightdm-webkit2-greeter
     + lightdm-webkit-theme-litarvan
 
+Alternativ zum `litarvan` Theme kann auch eins der [vielen anderen genutzt werden](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=lightdm-webkit&outdated=&SB=n&SO=a&PP=50&do_Search=Go), beispielsweise ist `aether` auch schön anzusehen.
+
 Anschließend muss die Konfiguration von `lightdm` in `/etc/lightdm/lightdm.conf` wie folgt angepasst werden:
 
     # Im Abschnitt [Seat:*]
