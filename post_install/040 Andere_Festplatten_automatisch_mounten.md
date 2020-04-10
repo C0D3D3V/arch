@@ -53,8 +53,8 @@ Wie bereits bei der Installation kann die UUID wie folgt in `vim` kopiert werden
 Nun kann entschieden werden wohin die Festplatte eingebunden werden soll. Beispeiseweise nach `/data`:
 
     mkdir /data
-    chown root:users /data
-    chmod 775 /data
+    chown root:users -R /data
+    chmod 775 -R /data
 
 Anschließend muss die `/etc/fstab` Datei angepasst werden:
 

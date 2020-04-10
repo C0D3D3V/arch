@@ -7,8 +7,10 @@ Terminals sind unter Linux wichtiger als in anderen Betriebssystemen weil damit 
     + zsh
     + zsh-completions
     + antigen-git
+    + nerd-fonts-meslo
 
 * `antigen-git` als plugin manager
+* `nerd-fonts-meslo` gute Font für PowerLevel10k
 
 Ein Terminal führt in erster Linie eine [Shell](https://wiki.archlinux.org/index.php/Command-line_shell#firstHeading) aus. [zsh](https://wiki.archlinux.de/title/Zsh) ist eine sehr schnelle und hoch konfigurierbare Shell.
 
