@@ -10,11 +10,11 @@ Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Paket
 
 ## Installation von Paketen
 
-    awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | yay -S --needed -
+    awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | yay -Sy --needed -
 
 Und anschließend alle Services aktivieren:
 
-    awk 1 packages/* | sed -n -e "s/^[ \t]*systemctl enable --now[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | xargs systemctl enable
+    awk 1 packages/* | sed -n -e "s/^[ \t]*systemctl enable --now[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | xargs sudo systemctl enable
 
 
  
