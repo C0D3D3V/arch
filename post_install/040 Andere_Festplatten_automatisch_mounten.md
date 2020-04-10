@@ -10,6 +10,7 @@ Alternativ geht auch `fdisk -l`, der Festplattenpfad sollte ähnlich zu dem sein
 
 Nun muss die Festplatte mit `gdisk` partitioniert werden.
 
+    + gdisk
 
     gdisk /dev/sdb
 

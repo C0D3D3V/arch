@@ -6,7 +6,7 @@ Um [Archive](https://wiki.archlinux.org/index.php/list_of_applications#Archive_m
     + p7zip
     + unrar
     + lzop
-    + lr zip
+    + lrzip
 
 * `p7zip` für 7z Archive
 * `unrar` für rar Archive

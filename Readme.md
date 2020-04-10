@@ -10,11 +10,11 @@ Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Paket
 
 ## Installation von Paketen
 
-`cat packages/* | sed -n -e "s/^[ \t]*+[ \t]*//gp" | yay -S --needed -`
+`awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*//gp" | yay -S --needed -`
 
 Und anschließend alle Services aktivieren:
 
-`cat packages/* | sed -n -e "s/^[ \t]*systemctl enable --now[ \t]*//gp" | xargs systemctl enable`
+`awk 1 packages/* | sed -n -e "s/^[ \t]*systemctl enable --now[ \t]*//gp" | xargs systemctl enable`
 
 
  

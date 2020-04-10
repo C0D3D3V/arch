@@ -20,9 +20,9 @@ Anschließend muss die `/etc/mkinitcpio.conf` Datei angepasst werden.
 * Nach `base udev` muss `plymouth` hinzugefügt werden.
 * `encrypt`muss mit `plymouth-encrypt` ersetzt werden.
 
-Nun kann die Initial Ram Disk neu gebaut werden:
-    
-    sudo mkinitcpio -P
+Dies könnte wie folgt aussehen:
+
+    HOOKS=(base udev plymouth keyboard keymap autodetect consolefont modconf block plymouth-encrypt filesystems resume fsck)
 
 
 Dann müssen die Kernel-Parameter angepasst werden. Dazu werden in `/boot/loader/entries/arch.conf` folgende Optionen hinzugefügt: 
@@ -70,5 +70,5 @@ Und in `/etc/lightdm/lightdm-webkit2-greeter.conf` muss die Konfiguration vom we
 
 Weil `plymouth` bereits installiert ist, genügt es den entsprechenden Dienst zu aktivieren:
 
-    systemctl enable --now lightdm-plymouth
+    systemctl enable lightdm-plymouth
 

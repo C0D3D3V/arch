@@ -7,6 +7,9 @@ Es gibt viele verschiedene [Hilfsprogramme](https://wiki.archlinux.de/title/AUR_
     pacman -Sy git
     git clone https://aur.archlinux.org/yay.git
     cd yay  
-    sudo makepkg -si
+    sudo rm -rf /tmp/makepkg
+    makepkg -si
     cd ..
     rm yay -rf
+
+Alle Pakete können ab nun mit `yay -S` installiert werden.

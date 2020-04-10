@@ -184,7 +184,7 @@ Alternativ kann dies auch automatisch erledigt werden:
 
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor vim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 
-    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode zstd dhcpcd
+    pacstrap /mnt base base-devel linux-firmware linux vim zsh efibootmgr intel-ucode zstd dhcpcd git
 
 - `base` stellt die grundlegendste Funktionalität bereit
 - `base-devel` beinhaltet `pacman` und Werkzeuge um weitere Software zu installieren und zu bauen
@@ -195,6 +195,7 @@ Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Ins
 - `intel-ucode` sollte nur auf einer Intel-CPU installiert werden. Auf einer AMD CPU sollte hingegen die `amd-ucode` installiert werden. Dies sind die Microcode-Patches.
 - `zstd` ist ein schnelles Werkzeug im Dateien zu komprimieren 
 - `dhcpcd` um auch im neuen System eine IP-Adresse dynamisch zugewiesen zu bekommen
+- `git` damit das Installatins-Skript auch im neuen System installiert werden kann.
 
 Auf einem Notebook sollte zusätzlich `netctl dialog wpa_supplicant` installiert werden, damit sich mit einem W-Lan verbunden werden kann.
 
