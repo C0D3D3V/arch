@@ -37,3 +37,14 @@ Beliebte Audioplayer sind `Audacious`, `Exaile`, `Quod Libet`un `Rhythmbox`. Die
 * `dleyna-server`
 
 Grilo muss unter Plugins erst noch aktiviert werden.
+
+
+## Audio Editor
+
+Ein Vergleich von Audio-Editors findet man [hier](https://en.wikipedia.org/wiki/Comparison_of_digital_audio_editors) und [hier](https://freedompenguin.com/articles/software/linux-digital-audio-workstation-roundup/). Kommt wirklich stark drauf an was man machen will und ehrlich gesagt habe ich in dem Bereich nicht viel Erfahrung. Empfehlen würe ich `Qtractor`, `Audacity`, `LMMS`, `Ardour` oder `Traverso DAW`.
+
+
+    + lmms
+
+
+
