@@ -5,8 +5,10 @@ Es gibt unzählige [verschiedene Webbrowser](https://wiki.archlinux.org/index.ph
     + firefox
     + firefox-i18n-de
     + chromium
+    + chromium-widevine
 
 * `firefox-i18n-de` für die Deutsch Sprache
+* `chromium-widevine` für [DRM](https://en.wikipedia.org/wiki/Digital_rights_management)
 
 Essentielle Add-Ons bzw. Erweiterungen:
 

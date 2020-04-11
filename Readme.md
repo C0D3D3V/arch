@@ -21,6 +21,6 @@ Und anschließend alle Services aktivieren:
 
 Um zu erfahren welche Pakete auf dem System ausdrücklich zusätzlich, zu den Paketen aus der Dokumentation, installiert sind:
 
-    comm -23 <(pacman -Qeq | sort) <(awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | sort)
+    comm -23 <(pacman -Qeq | sort) <(awk 1 */*.md | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | sort)
 
  
