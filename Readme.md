@@ -10,11 +10,17 @@ Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Paket
 
 ## Installation von Paketen
 
-    awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | yay -Sy --needed -
+    comm -13 <(pacman -Qq | sort) <(awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | sort) | yay -Sy --needed -
 
 Und anschließend alle Services aktivieren:
 
     awk 1 packages/* | sed -n -e "s/^[ \t]*systemctl enable --now[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | xargs sudo systemctl enable
 
+
+## Extras
+
+Um zu erfahren welche Pakete auf dem System ausdrücklich zusätzlich, zu den Paketen aus der Dokumentation, installiert sind:
+
+    comm -23 <(pacman -Qeq | sort) <(awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | sort)
 
  

@@ -52,10 +52,14 @@ Anschließend muss das Initrmfs Abbild neu gebaut werden:
 
 Ein guter [Displaymanger](https://wiki.archlinux.org/index.php/Display_manager) ist [lightdm](https://wiki.archlinux.org/index.php/LightDM#Changing_background_images/colors):
 
-    + xorg
+    + xorg-server
     + lightdm
     + lightdm-webkit2-greeter
     + lightdm-webkit-theme-litarvan
+
+* `xorg-server` wird benötigt damit lightdm dargestellt wird.
+* `lightdm-webkit2-greeter` ist ein netter greeter
+* `lightdm-webkit-theme-litarvan` ist dessen Theme
 
 Alternativ zum `litarvan` Theme kann auch eins der [vielen anderen genutzt werden](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=lightdm-webkit&outdated=&SB=n&SO=a&PP=50&do_Search=Go), beispielsweise ist `aether` auch schön anzusehen.
 

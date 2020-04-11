@@ -301,12 +301,11 @@ Der Hostname besteht aus einem zusammenhängenden Wort und kann wie eine Domain 
 
 
 **User-Einstellungen**
-
-Abschließend muss das root-Passwort gesetzt werden und ein neuer Benutzer "MYUSERNAME" hinzugefügt werden.
+Wähle ein sehr starkes root-Passwort, weil der root-User so gut wie nie verwendet wird sollte das Passwort stark sein.
 
     passwd
 
-Wähle ein sehr starkes Passwort, weil dieser User so gut wie nie verwendet wird sollte das Passwort stark sein.
+Abschließend muss ein neuer Benutzer "MYUSERNAME" hinzugefügt werden.
 
     useradd -m -g users -G wheel,storage,power,network,uucp -s /bin/zsh MYUSERNAME
     passwd MYUSERNAME
