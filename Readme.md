@@ -11,6 +11,7 @@ Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Paket
 ## Installation von Paketen
 
     comm -13 <(pacman -Qq | sort) <(awk 1 packages/* | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | sort) | yay -Sy --needed --noconfirm -
+    sudo systemctl daemon-reload
 
 Und anschließend alle Services aktivieren:
 
