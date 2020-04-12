@@ -11,6 +11,7 @@ Arch-Linux bietet eine ganze Menge an [Raster-Grafik-Editoren](https://wiki.arch
     + krita
     + krita-plugin-gmic
     + libheif
+    + gimp
 
 * `krita-plugin-gmic` fügt `gmic` zu krita hinzu, das ist ein Bildverarbeitung-Prozessor (Framework).
 * libheif
