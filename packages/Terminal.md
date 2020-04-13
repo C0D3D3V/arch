@@ -6,9 +6,12 @@ Terminals sind unter Linux wichtiger als in anderen Betriebssystemen weil damit 
 
     + zsh
     + zsh-completions
+    + zsh-autosuggestions
     + antigen-git
     + nerd-fonts-meslo
 
+* `zsh-completions` auto-completions
+* `zsh-autosuggestions` fish like completions
 * `antigen-git` als plugin manager
 * `nerd-fonts-meslo` gute Font für PowerLevel10k
 

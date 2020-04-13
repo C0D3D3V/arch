@@ -5,7 +5,9 @@ Hier findest du eine [Anleitung um ein Basissystem mit Arch-Linux zu installiere
 
 Nach der Installation ist vor der Installation. Bevor weitere Pakete installiert werden sollten die [Post-Installationsschritte](post_install) durchgeführt werden.
 
-Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Pakete bilden zusammen ein vollwertiges Desktopsystem.
+Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Pakete bilden zusammen ein vollwertiges Desktopsystem, welches für die meisten geeignet ist.
+
+Des weiteren finden sich hier auch [Beschreibungen zu extra Paketen](extra_packages). Diese Pakete sollen das System ergänzen für Power-User wie Entwickler, Designer usw.
 
 
 ## Installation von Paketen
@@ -22,6 +24,6 @@ Und anschließend alle Services aktivieren:
 
 Um zu erfahren welche Pakete auf dem System ausdrücklich zusätzlich, zu den Paketen aus der Dokumentation, installiert sind:
 
-    comm -23 <(pacman -Qeq | sort) <(awk 1 */*.md | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | sort)
+    comm -23 <(pacman -Qetq | sort) <(awk 1 */*.md | sed -n -e "s/^[ \t]*+[ \t]*\([^ \t]*\)[ \t]*$/\1/gp" | sort)
 
  
