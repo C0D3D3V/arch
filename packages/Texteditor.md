@@ -2,9 +2,9 @@
 
 # Terminal
 
-Vim ist und bleibt ein sehr guter [Terminal-Texteditor](https://wiki.archlinux.org/index.php/List_of_applications#Console_19). Vim ist extrem konfigurierbar.
+Vim ist und bleibt ein sehr guter [Terminal-Texteditor](https://wiki.archlinux.org/index.php/List_of_applications#Console_19). Vim ist extrem konfigurierbar. `gvim` statt `vim` damit die Zwischenablage auch funktioniert.
 
-    + vim
+    + gvim
 
 # GUI
 
@@ -21,6 +21,22 @@ Dann kann auch ein [deutsches Wörterbuch](https://marketplace.visualstudio.com/
 
 Um [Markdown-Werkzeuge](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) zu installieren: [Strg + P] und `ext install yzhang.markdown-all-in-one` eingeben. Mit [Strg + K V] kann die Preview gestartet und mit [Strg + Shift + V] geschlossen werden.
 
+<!--
+Empfohlene Extensions mit Strg + Shift + x installieren:
+
+Python:
+
+- Importmagic
+- Python
+- Python Docs
+- Visual Studio IntelliCode
+- python path
+- MagicPython
+
+
+
+
+-->
 
 <!--
 Um [Zeilen sortieren](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines) zu können: [Strg + P] und `ext install Tyriar.sort-lines` eingeben.

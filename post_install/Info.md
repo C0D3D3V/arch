@@ -5,7 +5,9 @@ Bei der Basis-Installation wurden folgende Pakete installiert:
     + base
     + base-devel
     + linux-firmware
-    + linux vim zsh
+    + linux 
+    + gvim
+    + zsh
     + efibootmgr
     + intel-ucode
     + zstd
