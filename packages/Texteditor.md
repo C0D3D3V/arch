@@ -33,7 +33,14 @@ Python:
 - python path
 - MagicPython
 
+Git: 
 
+- GtGraph
+- GitLens
+
+C/c++:
+
+- C/C++
 
 
 -->
