@@ -4,6 +4,6 @@ Damit Java Anwendung ordentlich laufen reicht es `jre-openjdk` zu installieren, 
 Damit auch Applets und einzelne `java` Dateien laufen muss zusätzlich ein `jdk` installiert werden. 
 
     + jdk-openjdk
-    + icetea-web
+    + icedtea-web
 
-* `icetea-web` damit auch Applets laufen
+* `icedtea-web` damit auch Applets laufen
