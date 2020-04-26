@@ -35,7 +35,7 @@ Python:
 
 Git: 
 
-- GtGraph
+- GitGraph
 - GitLens
 
 C/c++:
