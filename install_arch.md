@@ -180,7 +180,7 @@ Bevor die Installation gestartet wird sollte die Liste der Spiegelserver angepas
 Alternativ kann dies auch automatisch erledigt werden:
 
     pacman -Sy reflector
-    reflector -c France -c Germany -a 25 -p https --sort rate --verbose --save /etc/pacman.d/mirrorlist
+    reflector -c France -c Germany -a 12 --completion-percent 70 -p https --sort rate --verbose --save /etc/pacman.d/mirrorlist
 
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor gvim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 

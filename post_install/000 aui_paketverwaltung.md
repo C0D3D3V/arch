@@ -17,4 +17,4 @@ Alle Pakete können ab nun mit `yay -S` installiert werden.
 
 # Anschließend können noch einmal die Spiegelserver-Listen aktualisiert werden.
 
-    reflector -c France -c Germany -a 25 -p https --sort rate --verbose --save /etc/pacman.d/mirrorlist
+    reflector -c France -c Germany -a 12 --completion-percent 70 -p https --sort rate --verbose --save /etc/pacman.d/mirrorlist
