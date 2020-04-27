@@ -26,7 +26,6 @@ Empfohlene Extensions mit Strg + Shift + x installieren:
 
 Python:
 
-- Importmagic
 - Python
 - Python Docs
 - Visual Studio IntelliCode

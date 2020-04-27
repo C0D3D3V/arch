@@ -307,7 +307,7 @@ Wähle ein sehr starkes root-Passwort, weil der root-User so gut wie nie verwend
 
 Abschließend muss ein neuer Benutzer "MYUSERNAME" hinzugefügt werden.
 
-    useradd -m -g users -G wheel,storage,power,network,uucp,vboxusers -s /bin/zsh MYUSERNAME
+    useradd -m -g users -G wheel,storage,power,network,uucp -s /bin/zsh MYUSERNAME
     passwd MYUSERNAME
 
 Damit dieser Benutzer [Administratorrechte](https://wiki.archlinux.de/title/Sudo#sudo_f.C3.BCr_Benutzer_einrichten) bekommt muss die `/etc/sudoers` Datei angepasst werden. Entfernen Sie den Kommentar und das Leerzeichen vor:
