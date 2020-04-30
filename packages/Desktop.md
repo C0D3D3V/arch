@@ -91,7 +91,15 @@ Erweiterungen die hilfreich sind:
     
     - plasma-nm
 * `plasma-nm` Netzwerkmanager Applet für KDE
->
+
+-->
+
+KDEWallet ist nervig! Stattdessen keepassxc verwenden und in `~/.config/kwalletrc` folgendes eintragen:
+
+    [Wallet]
+    Enabled=false
+
+
 
 ## I3 
 

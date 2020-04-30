@@ -40,3 +40,18 @@ Natürlich kann auch `vim` oder `emacs` als diff-Werkzeug verwendet werden.
 
 Standardmäßig wird das Programm `$DIFFPROG` zum Vergleichen von Dateien verwendet, dies kann wie folgt festgelegt werden:
 `export DIFFPROG=meld`
+
+
+# Datenbanken
+
+Zum entwerfen von Datenbanken eignet sich `DBeaver`gut. DBeaver kann mit verschiedenen Datenbanken umgehen, darunter MySQL, Oracle, PostgreSQL, ODBS, JDBC, SQLite
+
+    + dbeaver
+  
+# Nützliche Werkzeuge
+
+    + shellcheck
+
+* `shellcheck` um Skripte zu prüfen
+
+

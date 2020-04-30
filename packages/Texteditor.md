@@ -41,6 +41,11 @@ C/c++:
 
 - C/C++
 
+Shell:
+
+- shell-format
+- shellcheck
+
 
 -->
 
