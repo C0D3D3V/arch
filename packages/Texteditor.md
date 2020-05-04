@@ -13,6 +13,9 @@ Es gibt viele [verschiedene Texteditoren](https://en.wikipedia.org/wiki/Comparis
 Visual Studio Code hat eine immer größer werdende Community und der Texteditor ist sehr reich an Funktionen. Als problematisch kann man nur `electron` sehen welches eine seltsame Runtime ist. 
 
     + code
+    + flake8
+
+* `flake8` um Python zu prüfen
     
 Mit [Strg + Shift + P] öffnet sich die Kommandoeingabe. Um die Sprache zu ändern muss "Configure Display Language" eingegeben/ausgewählt werden. Anschließend kann eine Sprache installiert werden.
 
@@ -59,7 +62,6 @@ Ich habe Kate getestet aber die Community ist einfach zu klein:
     - python-language-server
     - python-rope
     - python-pyflakes
-    - flake8
     - yapf
     - python-pydocstyle
     - texlab

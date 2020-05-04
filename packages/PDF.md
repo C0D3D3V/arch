@@ -12,18 +12,19 @@ Es gibt jedoch [PDF-Bearbeiter](https://wiki.archlinux.org/index.php/PDF,_PS_and
 
 ## PDF-Betrachter
 
-Beliebte Programme um PDF-Dateien zu betrachten sind `Okular`, `Atril`, `Evince` und `Xreader`. Ich bevorzuge `Okular` weil man damit auch schön präsentieren kann. `Okular` eignet sich auch gut um Comics oder Markdown-Dateien zu betrachten.
+Beliebte Programme um PDF-Dateien zu betrachten sind `Okular`, `Atril`, `Evince` und `Xreader`. Ich bevorzugte `Okular` weil man damit auch schön präsentieren kann. `Okular` eignet sich auch gut um Comics oder Markdown-Dateien zu betrachten. Jedoch ist der Druck-Dialog sher schlecht, deshalb empfehle ich jetzt `evince`.
 
-    + okular
-    + kdegraphics-mobipocket
+    + atril
 
 
-* `kdegraphics-mobipocket` mobi support
+
 
 <!-- 
-Optional:
+Optional für okular, falls okular installiert wird:
 
-
+    - kdegraphics-mobipocket
     - calligra
+
+* `kdegraphics-mobipocket` mobi support
 * `calligra` ODT und ODP support, calligra ist eine Alternative für LibreOffice
 -->
