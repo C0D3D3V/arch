@@ -16,7 +16,9 @@ Beliebte Programme um PDF-Dateien zu betrachten sind `Okular`, `Atril`, `Evince`
 
     + atril
 
+Damit die Druckvorschau funktioniert muss in `~/.config/gtk-3.0/settings.ini` folgendes hinzugefügt werden:
 
+    gtk-print-preview-command = atril --unlink-tempfile --preview --print-settings %s %f
 
 
 <!-- 
