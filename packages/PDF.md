@@ -5,9 +5,9 @@
 
 Um PDFs tatsächlich zu bearbeiten eignet sich `LibreOffice Draw` sehr gut. [Andere Editors](https://wiki.archlinux.org/index.php/PDF,_PS_and_DjVu#Advanced_editors) sind proprietär und umständlich. 
 
-Es gibt jedoch [PDF-Bearbeiter](https://wiki.archlinux.org/index.php/PDF,_PS_and_DjVu#Basic_editors) mit dem PDFs umsortiert, zusammengefügt und ähnliche einfache Änderungen vorgenommen werden können. Am besten eignet sich dafür `pdfmod`.
+Es gibt jedoch [PDF-Bearbeiter](https://wiki.archlinux.org/index.php/PDF,_PS_and_DjVu#Basic_editors) mit dem PDFs umsortiert, zusammengefügt und ähnliche einfache Änderungen vorgenommen werden können. Am besten eignet sich dafür `pdfarranger`.
 
-    + pdfmod 
+    - pdfarranger 
 
 
 ## PDF-Betrachter
