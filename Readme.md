@@ -1,13 +1,13 @@
 # Arch-Linux
 
 
-Hier findest du eine [Anleitung um ein Basissystem mit Arch-Linux zu installieren](https://github.com/C0D3D3V/arch/tree/master/install_arch.md).
+Hier findest du eine [Anleitung um ein Basissystem mit Arch-Linux zu installieren](install_arch.md).
 
-Nach der Installation ist vor der Installation. Bevor weitere Pakete installiert werden sollten die [Post-Installationsschritte](https://github.com/C0D3D3V/arch/tree/master/post_install) durchgeführt werden.
+Nach der Installation ist vor der Installation. Bevor weitere Pakete installiert werden sollten die [Post-Installationsschritte](post_install) durchgeführt werden.
 
-Hier findest du [Beschreibungen zu ausgewählten Paketen](https://github.com/C0D3D3V/arch/tree/master/packages). Diese Pakete bilden zusammen ein vollwertiges Desktopsystem, welches für die meisten geeignet ist.
+Hier findest du [Beschreibungen zu ausgewählten Paketen](packages). Diese Pakete bilden zusammen ein vollwertiges Desktopsystem, welches für die meisten geeignet ist.
 
-Des weiteren finden sich hier auch [Beschreibungen zu extra Paketen](https://github.com/C0D3D3V/arch/tree/master/extra_packages). Diese Pakete sollen das System ergänzen für Power-User wie Entwickler, Designer usw.
+Des weiteren finden sich hier auch [Beschreibungen zu extra Paketen](extra_packages). Diese Pakete sollen das System ergänzen für Power-User wie Entwickler, Designer usw.
 
 
 ## Installation von Paketen
