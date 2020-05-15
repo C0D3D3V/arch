@@ -10,8 +10,8 @@ Bei der Basis-Installation wurden folgende Pakete installiert:
     + zsh
     + efibootmgr
     + intel-ucode
-    + zstd
-    + dhcpcd
+    + openssh
+    + networkmanager
     + git
 
 Eventuell auch:
