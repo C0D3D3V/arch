@@ -13,9 +13,3 @@ Bei der Basis-Installation wurden folgende Pakete installiert:
     + openssh
     + networkmanager
     + git
-
-Eventuell auch:
-
-    + netctl
-    + dialog
-    + wpa_supplicant
