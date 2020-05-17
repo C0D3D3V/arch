@@ -13,7 +13,6 @@ Der Standard-Dateimanager unter Gnome ist `nautilus` jedoch ist der Dateimanager
 * `kio-fuse` um fuse Systeme einzubinden
 * `ffmpegthumbs` wird verwendet um Thumbnails von Videos zu erstellen.
 
-Damit Dolphin in KDE die bessere Fortschrittsanzeige verwendet, müssen in den Einstellung von KDE unter `Benachrichtigungen` die Haken bei `Fortschritt der Anwendungen` entfernt werden.
 
 
 
