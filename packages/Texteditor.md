@@ -24,7 +24,7 @@ Dann kann auch ein [deutsches Wörterbuch](https://marketplace.visualstudio.com/
 
 Um [Markdown-Werkzeuge](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) zu installieren: [Strg + P] und `ext install yzhang.markdown-all-in-one` eingeben. Mit [Strg + K V] kann die Preview gestartet und mit [Strg + Shift + V] geschlossen werden.
 
-<!--
+
 Empfohlene Extensions mit Strg + Shift + x installieren:
 
 Python:
@@ -50,7 +50,6 @@ Shell:
 - shellcheck
 
 
--->
 
 
 
