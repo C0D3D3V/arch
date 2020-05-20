@@ -52,26 +52,6 @@ Shell:
 
 -->
 
-<!--
-Um [Zeilen sortieren](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines) zu können: [Strg + P] und `ext install Tyriar.sort-lines` eingeben.
-
-Ich habe Kate getestet aber die Community ist einfach zu klein:
-
-    - kate
-    - clang
-    - python-language-server
-    - python-rope
-    - python-pyflakes
-    - yapf
-    - python-pydocstyle
-    - texlab
-
-* `clang` für C/C++ LSP suport
-* `python-language-server` für PYthon LSP support
-* `python-rope` completion und renaming. `python-pyflakes` linter und Fehlererkennung. `flake8` linter. `yapf` code formating. `python-pydocstyle` docstring checking.
-* `texlab` für latex lsp support
-
--->
 
 
 
