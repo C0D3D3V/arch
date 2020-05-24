@@ -87,7 +87,7 @@ Erweiterungen die hilfreich sind:
 * `plasma-pa` Audiomanager Applet für KDE
 
 <!--
-    plasma-nm ist nervig, stattdessen einfach nm-applet zum Autostart hinzufügen
+    plasma-nm ist nervig, der ist nicht kompatibel mit keepassxc, stattdessen einfach nm-applet zum Autostart hinzufügen
     
     - plasma-nm
 * `plasma-nm` Netzwerkmanager Applet für KDE
