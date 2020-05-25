@@ -20,6 +20,7 @@ Um ein Handy komplett zu synchronisieren eignet sich folgender Filter:
     **nosync**
     **/tmp/**
     **/temp/**
+    msgstore-????-??-??.*
     Download/Yalp/*
     TWRP/BACKUPS/**
     Aurora/**
