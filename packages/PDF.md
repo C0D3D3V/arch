@@ -21,12 +21,8 @@ Damit die Druckvorschau funktioniert muss in `~/.config/gtk-3.0/settings.ini` fo
     gtk-print-preview-command = atril --unlink-tempfile --preview --print-settings %s %f
 
 
-<!-- 
-Optional für okular, falls okular installiert wird:
+## PDF-Dateien finden
 
-    - kdegraphics-mobipocket
-    - calligra
+[fast-p](https://github.com/bellecp/fast-p) ist ein extrem schnelles Werzeug um PDF-Dateien zu durchsuchen.
 
-* `kdegraphics-mobipocket` mobi support
-* `calligra` ODT und ODP support, calligra ist eine Alternative für LibreOffice
--->
+    + fast-p

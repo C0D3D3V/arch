@@ -33,6 +33,12 @@ Als Alternative zu `find` eignet sich `fd`:
 
     + fzf
 
+## Code Searcher
+
+Du wirst `ag` [lieben](https://github.com/ggreer/the_silver_searcher), damit durchsuchst du dein Source-Code extrem schnell.
+
+    + the_silver_searcher
+
 ## Ausgabe von Dateien
 
 Als Alternative zu `cat` eignet sich `bat`: 
