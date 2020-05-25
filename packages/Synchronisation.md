@@ -8,3 +8,18 @@ Um Dateien auszutauschen gibt es [viele Wege](https://wiki.archlinux.org/index.p
     + syncthing-gtk
 
 Um `syncthing` als Service laufen zu lassen muss folgender Dienst angeschalten werden:  `syncthing@myusername.service`
+
+
+Um ein Handy komplett zu synchronisieren eignet sich folgender Filter:
+
+    Android/**
+    DCIM/.thumbnails/**
+    **thumbnails/**
+    **.part
+    **.*.swp
+    **nosync**
+    **/tmp/**
+    **/temp/**
+    Download/Yalp/*
+    TWRP/BACKUPS/**
+    Aurora/**
