@@ -14,8 +14,12 @@ Visual Studio Code hat eine immer größer werdende Community und der Texteditor
 
     + code
     + flake8
+    + python-pylint
+    + microsoft-python-language-server
 
 * `flake8` um Python zu prüfen
+* `python-pylint` ein python linter
+* `microsoft-python-language-server` IntelliCode server
     
 Mit [Strg + Shift + P] öffnet sich die Kommandoeingabe. Um die Sprache zu ändern muss "Configure Display Language" eingegeben/ausgewählt werden. Anschließend kann eine Sprache installiert werden.
 
@@ -26,6 +30,10 @@ Um [Markdown-Werkzeuge](https://marketplace.visualstudio.com/items?itemName=yzha
 
 
 Empfohlene Extensions mit Strg + Shift + x installieren:
+
+Gerneal:
+
+- Split Lines
 
 Python:
 
@@ -49,6 +57,9 @@ Shell:
 - shell-format
 - shellcheck
 
+C#:
+
+- C#
 
 
 

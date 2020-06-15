@@ -15,6 +15,7 @@ Essentielle Add-Ons bzw. Erweiterungen:
     * uBlock Origin
     * KeePassXC-Browser
     * HTTPS-Everywhere
+    * Buster (um Recaptchas automatisch zu lösen)
     * uMatrix (selbst wenn man bei der global Regel alles erlaubt, ist es besser als wenn man es nicht hat)
 
 Ich empfehle Passwörter nicht direkt im Browser abzuspeichern sondern lieber in KeepassXC welches Passwörter sicherer verwalten kann.

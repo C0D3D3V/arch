@@ -12,7 +12,7 @@ Um [Smartcards](https://wiki.archlinux.org/index.php/Smartcards) nutzen zu könn
 
 Wenn kein Tastenfeld am Lesegerät vorhanden ist muss in `/etc/opensc.conf` folgende Zeile hinzugefügt werden:
 
-    enable_pinpad = false
+    enable_pinpad = false;
 
 
 Anschließend kann der Dienst gestartet werden:

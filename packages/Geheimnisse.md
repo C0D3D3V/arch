@@ -25,4 +25,20 @@ Des weiteren muss in der `w8unlock.zsh` Datei der `KEEPASSXC_USER` zum eingenen 
 
 Der Secret-Service speichert unter Linux Geheimnisse sicher ab und lässt Programme nach wunsch darauf zugreifen. 
 
+
+Zuerst müssen alle anderen Secret services deaktiviert werden:
+
+In `~/.config/kwalletrc` folgendes eintragen:
+
+    [Wallet]
+    Enabled=false
+
+
+In `/etc/xdg/autostart/gnome-keyring-ssh.desktop`folgendes hinzufügen:
+
+    Enabled=false
+
+
 Damit KeepassXC als Secret-Service verwendet wird muss unter den Einstellungen `Secret-Service-Integration` aktiviert werden.  Anschließend muss bei `Offengelegte Datenbankgruppen` die entsprechende Datenbank mit dem Stift bearbeitet werden.  In diesem Fenster muss unter  `Secret-Service-Integration`  eine Gruppe festgelegt werden, in der allte Passwörter des Secret-Services abgespeichert werden. Anschließend ist alles bereit zur Nutzung. 
+
+
