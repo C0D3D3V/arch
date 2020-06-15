@@ -34,7 +34,7 @@ In `~/.config/kwalletrc` folgendes eintragen:
     Enabled=false
 
 
-In `/etc/xdg/autostart/gnome-keyring-ssh.desktop`folgendes hinzufügen:
+Dann `/etc/xdg/autostart/gnome-keyring-ssh.desktop` nach `~/.config/autostart/` kopieren und folgendes hinzufügen:
 
     Enabled=false
 
