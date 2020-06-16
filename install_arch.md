@@ -14,11 +14,11 @@ Um das Arch-Abbild auf ein USB-Stick zu schreiben kann wie folgt vorgegangen wer
 Dieses Repository kann mit `git` heruntergeladen werden:
 
     loadkeys de-latin1
-    dhcpcd          # Alternativ `nmtui` wenn eine W-Lan Verbindung erforderlich ist.
+    nmtui
     pacman -Sy git
     git clone https://github.com/C0D3D3V/arch.git
 
-Alternativ zu dieser Anleitung kann auch das identische automatische Skript von [hier](https://github.com/C0D3D3V/simpleAui/blob/master/liveinstall) verwendet werden.
+Alternativ zu dieser Anleitung kann auch das identische automatische Skript von [hier](https://github.com/C0D3D3V/aui) verwendet werden.
 
 
 
@@ -72,7 +72,7 @@ Als nächstes soll sicher gestellt werden, dass das Live-System im [UEFI-Modus](
 
 Um eine [Netzwerkverbindung](https://wiki.archlinux.org/index.php/Network_configuration#Network_management) einzurichten, wird meist bei einer Ethernet-Verbindung eine IP-Adresse über einen im Netz befindenden DHCP-Server zugewiesen. Damit eine Zuweisung erfolgen kann muss der entsprechende Client wie folgt gestartet werden:
 
-    dhcpcd      # Alternativ `nmtui` wenn eine W-Lan Verbindung erforderlich ist.
+nmtui
 
 Dann kann mit `ip addr` überprüft werden, ob eine IP-Adresse zugewiesen wurde und mit `ping archlinux.org` getestet werden ob eine Internetverbindung vorhanden ist.
 
@@ -130,14 +130,17 @@ Bevor die Partition verschlüsselt wird sollte überprüft werden ob genug [Entr
 
 Nun kann das anlegen der [Luks-Verschlüsselung](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS) gestartet werden ([weitere Infos](https://wiki.archlinux.de/title/Systemverschl%C3%BCsselung_mit_dm-crypt#Verschl.C3.BCsseltes_LVM_einrichten)): 
 
-    cryptsetup -c aes-xts-plain64 -y -s 512 --use-random luksFormat /dev/sda2
+Dazu erstellen wir uns ersteinmal eine Schlüsseldatei, diese kann später auf ein USB-Stick übertragen werden. Doch bis dahin wird die ersteinmal in die Inital-ramdisk kopiert.
 
-Am Besten sollte hier ein komplett zufälliges Passwort mit mehr als 20 Stellen gewählt werden. 
+    dd bs=512 count=4 if=/dev/random of=crypto_keyfile.bin iflag=fullblock
+    chmod 600 crypto_keyfile.bin
+
+    cryptsetup -c aes-xts-plain64 -y -s 512 --use-random --batch-mode luksFormat /dev/sda2 crypto_keyfile.bin
 
 Anschließend kann diese Luks-Partition geöffnet werden.
 
 
-    cryptsetup open --type luks /dev/sda2 cryptroot
+    cryptsetup open --type luks /dev/sda2 cryptroot --key-file crypto_keyfile.bin
 
 
 
@@ -164,7 +167,11 @@ Damit nun das Arch-System installiert werden kann, müssen die Partitionen auf d
     mkdir /mnt/boot
     mount /dev/sda1 /mnt/boot
 
+**Sicherung der Schlüsseldatei**
 
+Die Schlüsseldatei `crypto_keyfile.bin` die wir eben erzeugt haben ist sehr wichtig und sollte nach Möglichkeit auch direkt auf einem externen USB-Stick gesichert werden welcher sicher verwart werden kann. Wir kopieren den Schlüssel zuerst auf unser neues System.
+
+    cp crypto_keyfile.bin /mnt/crypto_keyfile.bin
 
 
 
@@ -180,7 +187,7 @@ Bevor die Installation gestartet wird sollte die Liste der Spiegelserver angepas
 Alternativ kann dies auch automatisch erledigt werden:
 
     pacman -Sy reflector
-    reflector -c France -c Germany -a 12 --completion-percent 70 -p https --sort rate --verbose --save /etc/pacman.d/mirrorlist
+    reflector -c Germany -a 12 --completion-percent 70 -p https --sort rate --verbose --save /etc/pacman.d/mirrorlist
 
 Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Install_essential_packages) und den Editor gvim sowie die zsh zu installieren, muss folgendes ausgeführt werden: 
 
@@ -200,27 +207,17 @@ Um das [Basissystem](https://wiki.archlinux.org/index.php/Installation_guide#Ins
 
 
 
-
-
-## Basic-Einstellungen
-
-**chrooten**
-
-Nun kann in das neu installierte [System](https://wiki.archlinux.org/index.php/Chroot#firstHeading) gewechselt werden. 
-
-    arch-chroot /mnt
-
-
-
-
-
 **Swap-File aktivieren**
 
 
-Die Swap-Datei sollte mindestens so groß sein wie der Arbeitsspeicher. Wie groß der Arbeitsspeicher ist kann mit `free --giga` ermittelt werden. Um eine Swap-Datei zu aktivieren muss folgendes erledigt werden:
+Die Swap-Datei sollte genau halb so groß sein wie der Arbeitsspeicher. Wie groß der Arbeitsspeicher ist kann mit `free --giga` ermittelt werden. Um die Swap größe exakt zu bestimmen kann folgender Befehl verwendet werden:
+
+    echo $(($(free --byte | awk 'FNR==2{print $2}') / 2))
+
+Um eine Swap-Datei zu aktivieren muss folgendes erledigt werden, ersetzen Sie `{swapSize}` mit der oben ausgegeben Zahl oder mit einer Gröberen angabe z.B. `20GiB`:
 
 
-    fallocate -l 20GiB /mnt/swapfile
+    fallocate -l {swapSize} /mnt/swapfile
     chmod 600 /mnt/swapfile
     mkswap -L swap /mnt/swapfile
     swapon /mnt/swapfile
@@ -249,18 +246,45 @@ Um /tmp schneller zu machen kann diese als [Ramdisk](https://wiki.archlinux.de/t
     # tmpfs 
     none /tmp tmpfs defaults,noatime,mode=1777 0 0
 
+Die vohin aktivierte Swap-Datei kann jetzt wieder deaktiviert werden:
+
+    swapoff -a
 
 
 
 
-**Zeit-Einstellungen**
+## Basic-Einstellungen
 
-Zunächst wird die [Systemzeit](https://wiki.archlinux.org/index.php/System_time#Time_zone) eingestellt. Wichtig ist hierbei, dass im UEFI die utc-Zeit eingestellt ist. 
+**chrooten**
 
-    ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
-    hwclock --systohc --utc
+Nun kann in das neu installierte [System](https://wiki.archlinux.org/index.php/Chroot#firstHeading) gewechselt werden. 
+
+    arch-chroot /mnt
+
+**Netzwerkmanager aktivieren**
+
+Damit wir nach dem Neustart schneller Internet habenn aktivieren wir den NetworkManager.
+
+    systemctl enable NetworkManager
+
+**Paketverwaltung-Einstellungen**
+
+Um auch [32bit Anwendung](https://wiki.archlinux.org/index.php/multilib) installieren zu können muss in der `/etc/pacman.conf` Datei die `multilib` Sektion wieder einkommentiert werden.
+
+    [multilib]
+    Include = /etc/pacman.d/mirrorlist
+
+Auch in dieser Datei können Farben für Pacman aktiviert werden indem von `#Color` das Kommentarzeichen entfernt wird.
+
+    Color
 
 
+Um das Bauen von Paketen mit [makepkg](https://wiki.archlinux.org/index.php/makepkg#tmpfs) etwas zu beschleunigen, muss die `/etc/makepkg.conf` Datei angepasst werden:
+
+    BUILDDIR=/tmp/makepkg
+    PKGEXT='.pkg.tar.zst
+    COMPRESSZST=(zstd -c -q -T0 -18 -)
+    MAKEFLAGS='-j$(nproc)
 
 
 
@@ -296,6 +320,50 @@ Der Hostname besteht aus einem zusammenhängenden Wort und kann wie eine Domain 
 
 
 
+**Journal-Einstellungen**
+
+Damit das [Journal](https://wiki.archlinux.org/index.php/Systemd/Journal#Journal_size_limit) nicht 4GB groß wird muss dies weiter beschränkt werden. Dazu muss die Datei `/etc/systemd/journald.conf` angepasst werden.
+
+
+    Storage=persistent
+    SystemMaxUse=1G
+
+**Zeit-Einstellungen**
+
+Zunächst wird die [Systemzeit](https://wiki.archlinux.org/index.php/System_time#Time_zone) eingestellt. Wichtig ist hierbei, dass im UEFI die utc-Zeit eingestellt ist. 
+
+    ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+    hwclock --systohc --utc
+
+
+
+**Beep Deaktivieren**
+
+Standardmäßig lässt Linux den PC bei einem Terminal Fehler [Beepen](https://wiki.archlinux.org/index.php/PC_speaker#Disable_PC_Speaker), um das zu deaktivieren muss folgendes gemacht werden:
+
+    echo "blacklist pcspkr" > /mnt/etc/modprobe.d/nobeep.conf
+
+
+
+
+**Init-RAM-Disk (initrd)**
+
+Abschließend muss [mkinitcpio](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_mkinitcpio_2) konfiguriert werden.
+
+    vim /etc/mkinitcpio.conf
+
+
+In der Datei muss `MODULES` und `Hooks` wie folgt angepasst werden:
+
+    MODULES=(ext4)
+    HOOKS=(base udev keyboard keymap autodetect consolefont modconf block encrypt filesystems resume fsck)
+
+Nun muss nur noch das initramfs Abbild neu erstellt werden, wie folgt:
+
+    mkinitcpio -P
+    chmod 600 /boot/initramfs-linux*
+
+Wenn dabei Warnungen beim bauen des Fallback-Abbilds auftreten wie beispielsweise diese Warnung: `==> WARNING: Possibly missing firmware for module: wd719x` oder `==> WARNING: Possibly missing firmware for module: aic94xx` ist das nicht weiter schlimm und kann später durch das installieren der entsprechenden Firmware aus dem AUR behoben werden, falls gewünscht.
 
 
 **User-Einstellungen**
@@ -316,66 +384,6 @@ Damit dieser Benutzer [Administratorrechte](https://wiki.archlinux.de/title/Sudo
 
 
 
-**Paketverwaltung-Einstellungen**
-
-Um auch [32bit Anwendung](https://wiki.archlinux.org/index.php/multilib) installieren zu können muss in der `/etc/pacman.conf` Datei die `multilib` Sektion wieder einkommentiert werden.
-
-    [multilib]
-    Include = /etc/pacman.d/mirrorlist
-
-Auch in dieser Datei können Farben für Pacman aktiviert werden indem von `#Color` das Kommentarzeichen entfernt wird.
-
-    Color
-
-
-
-Um das Bauen von Paketen mit [makepkg](https://wiki.archlinux.org/index.php/makepkg#tmpfs) etwas zu beschleunigen, muss die `/etc/makepkg.conf` Datei angepasst werden:
-
-    BUILDDIR=/tmp/makepkg
-    PKGEXT='.pkg.tar.zst
-    COMPRESSZST=(zstd -c -q -T0 -18 -)
-    MAKEFLAGS='-j$(nproc)
-
-
-
-
-
-**Journal-Einstellungen**
-
-Damit das [Journal](https://wiki.archlinux.org/index.php/Systemd/Journal#Journal_size_limit) nicht 4GB groß wird muss dies weiter beschränkt werden. Dazu muss die Datei `/etc/systemd/journald.conf` angepasst werden.
-
-
-    Storage=persistent
-    SystemMaxUse=1G
-    
-
-**Beep Deaktivieren**
-
-Standardmäßig lässt Linux den PC bei einem Terminal Fehler [Beepen](https://wiki.archlinux.org/index.php/PC_speaker#Disable_PC_Speaker), um das zu deaktivieren muss folgendes gemacht werden:
-
-    echo "blacklist pcspkr" > /mnt/etc/modprobe.d/nobeep.conf
-
-
-
-
-
-**Init-RAM-Disk (initrd)**
-
-Abschließend muss [mkinitcpio](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#Configuring_mkinitcpio_2) konfiguriert werden.
-
-    vim /etc/mkinitcpio.conf
-
-
-In der Datei muss `MODULES` und `Hooks` wie folgt angepasst werden:
-
-    MODULES=(ext4)
-    HOOKS=(base udev keyboard keymap autodetect consolefont modconf block encrypt filesystems resume fsck)
-
-Nun muss nur noch das initramfs Abbild neu erstellt werden, wie folgt:
-
-    mkinitcpio -P
-
-Wenn dabei Warnungen beim bauen des Fallback-Abbilds auftreten wie beispielsweise diese Warnung: `==> WARNING: Possibly missing firmware for module: wd719x` oder `==> WARNING: Possibly missing firmware for module: aic94xx` ist das nicht weiter schlimm und kann später durch das installieren der entsprechenden Firmware aus dem AUR behoben werden, falls gewünscht.
 
 
 
@@ -424,7 +432,6 @@ Die letzte Datei `/boot/loader/entries/arch.conf` ist sehr wichtig, überprüfe 
 Abschließend wird folgendes ausgeführt:
 
     exit
-    swapoff -a
     umount -R /mnt
     reboot
 
