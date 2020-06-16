@@ -382,6 +382,25 @@ Damit dieser Benutzer [Administratorrechte](https://wiki.archlinux.de/title/Sudo
 
 
 
+**Aktvieren des SSHD Dienstes**
+
+Wenn Sie aus der Ferne auf dieses neu eingerichtete Gerät zugreifen wollen, dann ist es schlau ein SSHD Dienst zu aktivieren. 
+Damit können Sie bequem das Gerät aus der Ferne bedienen:
+
+    systemctl enable sshd
+
+Falls Sie einen Öffentlichen-Schlüssel haben, können Sie diesen direkt runterladen und aktivierne, ersetzen Sie `$NEWUSER` mit dem zuvor festgelegten `MYUSERNAME`:
+
+
+    mkdir "/home/$NEWUSER/.ssh"
+    curl -L --output /home/$NEWUSER/.ssh/authorized_keys "$SSH_PUBKEY"
+    chown -R "$NEWUSER:users" "/home/$NEWUSER/.ssh"
+    chmod 0600 "/home/$NEWUSER/.ssh/authorized_keys"
+
+Falls ein Öffentlichen-Schlüssel installiert wurde kann die `/etc/ssh/sshd_config` Datei angepasst weren. Der Kommentar vor  `PasswordAuthentication` muss entfernt werden und auf `no` eingestellt werden. Sodass ein Anmeldeversuch ohne den Privaten-Schlüssel verhinert wird:
+
+    PasswordAuthentication no
+
 
 
 
