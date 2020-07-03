@@ -20,6 +20,8 @@ Visual Studio Code hat eine immer größer werdende Community und der Texteditor
 * `flake8` um Python zu prüfen
 * `python-pylint` ein python linter
 * `microsoft-python-language-server` IntelliCode server
+* `python-pycodestyle` noch ein linter
+* `python-pydocstyle` noch ein linter, aber für Kommentare
     
 Mit [Strg + Shift + P] öffnet sich die Kommandoeingabe. Um die Sprache zu ändern muss "Configure Display Language" eingegeben/ausgewählt werden. Anschließend kann eine Sprache installiert werden.
 
@@ -42,6 +44,7 @@ Python:
 - Visual Studio IntelliCode
 - python path
 - MagicPython
+- Python Docstring Generator
 
 Git: 
 
@@ -60,6 +63,14 @@ Shell:
 C#:
 
 - C#
+
+Java:
+
+- Language support for Java
+
+Unity:
+
+- Debugger for Unity
 
 
 
