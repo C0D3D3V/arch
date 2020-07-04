@@ -14,14 +14,14 @@ Visual Studio Code hat eine immer größer werdende Community und der Texteditor
 
     + code
     + flake8
-    + python-pylint
+    + python-black
     + microsoft-python-language-server
+    + python-pydocstyle
 
 * `flake8` um Python zu prüfen
-* `python-pylint` ein python linter
+* `python-black` ein python Linter und Formatierer
 * `microsoft-python-language-server` IntelliCode server
-* `python-pycodestyle` noch ein linter
-* `python-pydocstyle` noch ein linter, aber für Kommentare
+* `python-pydocstyle` noch ein Linter, aber für Kommentare
     
 Mit [Strg + Shift + P] öffnet sich die Kommandoeingabe. Um die Sprache zu ändern muss "Configure Display Language" eingegeben/ausgewählt werden. Anschließend kann eine Sprache installiert werden.
 
