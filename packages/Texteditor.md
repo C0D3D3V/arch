@@ -40,15 +40,14 @@ Gerneal:
 Python:
 
 - Python
-- Python Docs
 - Visual Studio IntelliCode
-- python path
-- MagicPython
+- Python Path
 - Python Docstring Generator
 
 Git: 
 
 - GitGraph
+- Git History
 - GitLens
 
 C/c++:
