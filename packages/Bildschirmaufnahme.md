@@ -12,7 +12,5 @@
     + obs-studio
     + libva-intel-driver
     + libva-mesa-driver
-    + obs-xdg-portal-git
-
+  
 * `libva-mesa-driver` und `libva-intel-driver` für Hardware Encoding
-* `obs-xdg-portal-git` um auch in wayland aufzunehmen
