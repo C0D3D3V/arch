@@ -12,13 +12,10 @@ Es gibt jedoch [PDF-Bearbeiter](https://wiki.archlinux.org/index.php/PDF,_PS_and
 
 ## PDF-Betrachter
 
-Beliebte Programme um PDF-Dateien zu betrachten sind `Okular`, `Atril`, `Evince` und `Xreader`. Ich bevorzugte `Okular` weil man damit auch schön präsentieren kann. `Okular` eignet sich auch gut um Comics oder Markdown-Dateien zu betrachten. Jedoch ist der Druck-Dialog sher schlecht, deshalb empfehle ich jetzt `evince`.
+Beliebte Programme um PDF-Dateien zu betrachten sind `Okular`, `Atril`, `Evince` und `Xreader`. Ich bevorzugte `Okular` weil man damit auch schön präsentieren kann. `Okular` eignet sich auch gut um Comics oder Markdown-Dateien zu betrachten. Jedoch ist der Druck-Dialog sehr schlecht, deshalb empfehle ich jetzt `evince`.
 
-    + atril
+    + evince
 
-Damit die Druckvorschau funktioniert muss in `~/.config/gtk-3.0/settings.ini` folgendes hinzugefügt werden:
-
-    gtk-print-preview-command = atril --unlink-tempfile --preview --print-settings %s %f
 
 
 ## PDF-Dateien finden

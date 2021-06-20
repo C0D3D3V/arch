@@ -4,6 +4,10 @@
 
     + bluez
     + bluez-utils
+    + pulseaudio-modules-bt
+
+* pulseaudio-modules-bt fügt aptx hinzu
+
 
 Der `bluetooth` Dienst muss entsprechend gestartet werden.
 
@@ -15,4 +19,3 @@ Der `bluetooth` Dienst muss entsprechend gestartet werden.
 Als Manager eignet sich `blueman` sehr gut.
 
     + blueman
-    + pulseaudio-bluetooth

@@ -28,6 +28,14 @@
 
     + font-mathematica
 
+## Mono-Fonts
+
+    + ttf-roboto-mono
+
+## Awesome Fonts
+
+    + otf-font-awesome
+    + awesome-terminal-fonts
 
 Damit die [Schriftarten korrekt verwendet werden](https://dev.to/darksmile92/get-emojis-working-on-arch-linux-with-noto-fonts-emoji-2a9), erstelle die Datei `/etc/fonts/local.conf` mit folgendem Inhalt:
 
