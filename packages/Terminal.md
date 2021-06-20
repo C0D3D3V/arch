@@ -30,7 +30,7 @@ Es wurde mit verscheiden [Terminal-Emulatoren](https://wiki.archlinux.org/index.
 
 Weil das Konfigurieren von `alacritty` etwas ungewohnt für manche ist. Empfehle ich auch noch `gnome-terminal` welche sich komplett per GUI konfigurieren lässt (Alternative wäre auch `konsole`).
 
-    - gnome-terminal
+    + gnome-terminal
 
 <!--
 Alternativen: 
