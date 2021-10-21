@@ -5,7 +5,7 @@
 
 Linux hat ohne [plymouth](https://wiki.archlinux.org/index.php/plymouth) keinen Splash-Screen während dem Bootvorgang, stattdessen wird beim Booten die Terminaltausgabe präsentiert. Damit ein schöner Ladebildschirm dargestellt wird, muss zunächst `plymouth` installiert werden.
 
-    + plymouth
+    + plymouth-git
     + ttf-dejavu
 
 Die Font `ttf-dejavu` wird zum korrekten darstellen gebraucht.
