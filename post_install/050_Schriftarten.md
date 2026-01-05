@@ -32,10 +32,11 @@
 
     ttf-roboto-mono
 
-## Awesome Fonts
+## Symbol Fonts
 
     + otf-font-awesome
     + awesome-terminal-fonts
+    + ttf-material-symbols-variable
 
 Damit die [Schriftarten korrekt verwendet werden](https://dev.to/darksmile92/get-emojis-working-on-arch-linux-with-noto-fonts-emoji-2a9), erstelle die Datei `/etc/fonts/local.conf` mit folgendem Inhalt:
 

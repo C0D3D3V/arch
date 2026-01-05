@@ -76,3 +76,10 @@ Alias:
 [Screen](https://wiki.archlinux.org/title/GNU_Screen) ist alt aber gut
 
     + screen
+
+
+## Zwischenablage
+
+Terminalausgaben in den Zwischenspeicher zu kopieren:
+
+    + xclip

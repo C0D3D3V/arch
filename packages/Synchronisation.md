@@ -24,3 +24,9 @@ Um ein Handy komplett zu synchronisieren eignet sich folgender Filter:
     Download/Yalp/*
     TWRP/BACKUPS/**
     Aurora/**
+
+## Cloud
+
+Ich nutze Nextcloud.
+
+    + nextcloud-client
