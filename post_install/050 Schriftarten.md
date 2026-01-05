@@ -4,7 +4,8 @@
 
 ## Bitmap
 
-    + bdf-unifont
+    bdf-unifont
+    psf-envypn
   
 ## Latin-Families
 
@@ -22,15 +23,10 @@
 ## Emoji-Fonts
 
     + noto-fonts-emoji
-    + ttf-joypixels
-
-## Math-Fonts
-
-    + font-mathematica
 
 ## Mono-Fonts
 
-    + ttf-roboto-mono
+    ttf-roboto-mono
 
 ## Awesome Fonts
 
