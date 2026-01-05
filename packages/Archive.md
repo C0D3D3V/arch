@@ -1,16 +1,17 @@
 # Archive
 
-Um [Archive](https://wiki.archlinux.org/index.php/list_of_applications#Archive_managers) zu verwalten eignet sich `ark`:
+Um [Archive](https://wiki.archlinux.org/title/Archiving_and_compression) zu entpacken:
 
-    + ark
-    + p7zip
-    + unrar
-    + lzop
     + lrzip
-    + udftools
+    + lzop
+    + 7zip
+    + unrar
+    + zip
+    + unzio
 
-* `p7zip` für 7z Archive
-* `unrar` für rar Archive
-* `lzop`für LZO Formate
 * `lrzip` für LRZ Formate
-* `udftools` für UDF Formate
+* `lzop`für LZO Formate
+* `7zip` für 7z Archive
+* `unrar` für rar Archive
+* `zip` für zip Archive
+* `unzip` für zip Archive

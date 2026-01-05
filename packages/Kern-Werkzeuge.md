@@ -2,6 +2,10 @@
 
 Unter [Kern-Werkzeuge](https://wiki.archlinux.org/index.php/Core_utilities) verstehen sich die Werkzeuge die man zum schnellen Arbeiten im Terminal benötigt.
 
+## Bedienungsanleitungen
+
+    + man-db
+
 ## Kopieren
 
 Als Alternative zu `cp` eignet sich `rsync`:
