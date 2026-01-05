@@ -23,6 +23,10 @@ Alias:
     alias ls="lsd"
     alias l="lsd -la"
 
+## Dateien lesen / blättern
+
+    + less
+
 ## Dateien finden
 
 Als Alternative zu `find` eignet sich `fd`:
