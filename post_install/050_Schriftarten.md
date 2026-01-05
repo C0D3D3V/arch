@@ -24,6 +24,10 @@
 
     + noto-fonts-emoji
 
+## Math-Fonts
+
+    font-mathematica
+
 ## Mono-Fonts
 
     ttf-roboto-mono

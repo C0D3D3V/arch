@@ -7,8 +7,8 @@ Terminals sind unter Linux wichtiger als in anderen Betriebssystemen weil damit 
     + zsh
     + zsh-completions
     + zsh-autosuggestions
-    + antigen-git
-    + nerd-fonts-meslo
+    -  antigen-git
+    - nerd-fonts-meslo
 
 * `zsh-completions` auto-completions
 * `zsh-autosuggestions` fish like completions
@@ -25,12 +25,16 @@ Um die [Shell zu wechseln](https://wiki.archlinux.org/index.php/Command-line_she
 
 Es wurde mit verscheiden [Terminal-Emulatoren](https://wiki.archlinux.org/index.php/list_of_applications#Terminal_emulators) verglichen und das schnellste Terminal aktuell scheint `alacritty` zu sein.
 
-    + alacritty
+    - alacritty
 
 
 Weil das Konfigurieren von `alacritty` etwas ungewohnt für manche ist. Empfehle ich auch noch `gnome-terminal` welche sich komplett per GUI konfigurieren lässt (Alternative wäre auch `konsole`).
 
-    + gnome-terminal
+    - gnome-terminal
+
+Zurzeit nutze ich nur [kitty](https://sw.kovidgoyal.net/kitty/) da es sehr umfangreiche Funktionen bietet:
+
+    + kitty
 
 <!--
 Alternativen: 

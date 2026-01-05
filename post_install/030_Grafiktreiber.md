@@ -16,9 +16,9 @@ Speziell sollte geprüft werden ob die Grafikkarte als [bei NVIDIA](https://www.
 
 Für GeForce GTX 660 ist es also ausreichen `nvidia` zu installieren.
 
-    + nvidia
-    + lib32-nvidia-utils
-    + xorg-xrandr
+    - nvidia
+    - lib32-nvidia-utils
+    - xorg-xrandr
 
 `lib32-nvidia-utils` wird benötigt um auch 32 Bit Anwendungen zu unterstützen.
 `xrandr` um die Beischirmeinstellungen automatisch einzurichten.
@@ -76,15 +76,15 @@ Weil nun `nvidia` als Kernel-Module geladen wird sollte entsprechend das `initra
 
 Um die Einstellungen des Treibers zu verwalten kann `nividia-settings` installiert werden.
 
-    + nvidia-settings
+    - nvidia-settings
 
 
 ## Intel
 
 [Intel Grafiktreiber](https://wiki.archlinux.org/index.php/intel_graphics#Installation) sind im Paket `mesa` enthalten. Dies wird normalerweise mit xorg mit installiert.
 
-    + mesa
-    + lib32-mesa
+    - mesa
+    - lib32-mesa
 
 
 Anschließend muss die `/etc/mkinitcpio.conf` Datei angepasst werden. Zu den `MODULES` muss der Kernel-Grafiktreiber `i915` hinzugefügt werden. 
