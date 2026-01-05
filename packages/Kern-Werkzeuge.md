@@ -66,3 +66,9 @@ Alias:
 Alias:
 
     alias top="htop"
+
+## Terminal Multiplexer
+
+[Screen](https://wiki.archlinux.org/title/GNU_Screen) ist alt aber gut
+
+    + screen
