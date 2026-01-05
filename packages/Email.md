@@ -6,9 +6,11 @@ Die drei wichtigsten [Email-Clients](https://wiki.archlinux.org/index.php/List_o
 
     + evolution
     + evolution-spamassassin
+    + evolution-on
 
 
 * `evolution-spamassassin`  ist ein Spam-Check Plugins.
+* `evolution-on`  fügt ein Tray Icon hinzu.
 
 
 <!--

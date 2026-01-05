@@ -24,3 +24,8 @@ Um Arduinos zu programmieren eignet sich `arduino`.
 
     + arduino
 
+## IntelliJ
+
+Meine lieblings Java IDEA
+
+    + intellij-idea-community-edition

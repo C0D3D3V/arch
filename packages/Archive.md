@@ -9,9 +9,9 @@ Um [Archive](https://wiki.archlinux.org/title/Archiving_and_compression) zu entp
     + zip
     + unzio
 
-* `lrzip` für LRZ Formate
-* `lzop`für LZO Formate
-* `7zip` für 7z Archive
-* `unrar` für rar Archive
+* `lrzip` für LRZ Formate (.lrz)
+* `lzop`für LZO Formate (.lzo, .tzo)
+* `7zip` für 7z Archive (.7z)
+* `unrar` für rar Archive (.rar)
 * `zip` für zip Archive
-* `unzip` für zip Archive
+* `unzip` für zip Archive (.zip)

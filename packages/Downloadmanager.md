@@ -18,4 +18,4 @@ Es gibt viele verschiedene [Download-Manager](https://wiki.archlinux.org/index.p
 
 Der Videoplayer `mpv` kann auch youtube-Videos abspielen. `mpv` verwendet dazu `youtube-dl` der beste Downloader für Youtube.
 
-    + youtube-dl
+    + yt-dlp

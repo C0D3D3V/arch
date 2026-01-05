@@ -25,6 +25,13 @@ Bisher gibt es wenige gute Alternativen zu [Libre-Office](https://wiki.archlinux
 In den Optionen kann unter `LibreOffice -> Ansicht` der Symbolstil auf `Breeze (SVG + dark)` gestellt werden. Des weiteren sollte rechts daneben `Grafikausgabe` auf `OpenGL für das Rendern` aktiviert werden.  `Kantenglättung verwenden` kann nach belieben deaktiviert werden.
 
 
+Eventuell:
+
+    - libreoffice-extension-writingtool
+
+* Erlaubt lokale AIs, war bisher aber nicht so gut.
+
+
 <!--
 
 Optional: 

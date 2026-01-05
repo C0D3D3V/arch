@@ -70,7 +70,7 @@ Es gibt verschiedene [Druckerverwaltungsprogramme](https://wiki.archlinux.org/in
 
 KDE hat ein extra Modul für die Systemeinstellungen für Drucker. Wirklich sehr schön, nur schade, dass es um kde gebaut wurde:
 
-    + print-manager
+    - print-manager
 
 
 ## Scannen

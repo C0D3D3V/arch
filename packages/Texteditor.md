@@ -13,15 +13,6 @@ Es gibt viele [verschiedene Texteditoren](https://en.wikipedia.org/wiki/Comparis
 Visual Studio Code hat eine immer größer werdende Community und der Texteditor ist sehr reich an Funktionen. Als problematisch kann man nur `electron` sehen welches eine seltsame Runtime ist. 
 
     + code
-    + flake8
-    + python-black
-    + microsoft-python-language-server
-    + python-pydocstyle
-
-* `flake8` um Python zu prüfen
-* `python-black` ein python Linter und Formatierer
-* `microsoft-python-language-server` IntelliCode server
-* `python-pydocstyle` noch ein Linter, aber für Kommentare
     
 Mit [Strg + Shift + P] öffnet sich die Kommandoeingabe. Um die Sprache zu ändern muss "Configure Display Language" eingegeben/ausgewählt werden. Anschließend kann eine Sprache installiert werden.
 
@@ -30,46 +21,6 @@ Dann kann auch ein [deutsches Wörterbuch](https://marketplace.visualstudio.com/
 
 Um [Markdown-Werkzeuge](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) zu installieren: [Strg + P] und `ext install yzhang.markdown-all-in-one` eingeben. Mit [Strg + K V] kann die Preview gestartet und mit [Strg + Shift + V] geschlossen werden.
 
-
-Empfohlene Extensions mit Strg + Shift + x installieren:
-
-Gerneal:
-
-- Split Lines
-
-Python:
-
-- Python
-- Visual Studio IntelliCode
-- Python Path
-- Python Docstring Generator
-
-Git: 
-
-- GitGraph
-- Git History
-- GitLens
-
-C/c++:
-
-- C/C++
-
-Shell:
-
-- shell-format
-- shellcheck
-
-C#:
-
-- C#
-
-Java:
-
-- Language support for Java
-
-Unity:
-
-- Debugger for Unity
 
 
 

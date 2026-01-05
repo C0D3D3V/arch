@@ -40,12 +40,12 @@ Alternative: `/etc/xdg/autostart/gnome-keyring-ssh.desktop` nach `~/.config/auto
 
     Hidden=true
 
-Falls lightdm verwendet wird sollte auch dort der `gnome-keyring-daemon` aus der Konfiguration entfernt werden. Dazu wird in `/etc/pam.d/lightdm` und `/etc/pam.d/lightdm-autologin` alle Zeilen **entfernet** welche `pam_gnome_keyring.so` enthalten alse:
+Falls lightdm verwendet wird sollte auch dort der `gnome-keyring-daemon` aus der Konfiguration entfernt werden. Dazu wird in `/etc/pam.d/lightdm` und `/etc/pam.d/lightdm-autologin` alle Zeilen **entfernet** welche `pam_gnome_keyring.so` enthalten also:
 
     -auth       optional    pam_gnome_keyring.so
     -session    optional    pam_gnome_keyring.so auto_start
 
 
-Damit KeepassXC als Secret-Service verwendet wird muss unter den Einstellungen `Secret-Service-Integration` aktiviert werden.  Anschließend muss bei `Offengelegte Datenbankgruppen` die entsprechende Datenbank mit dem Stift bearbeitet werden.  In diesem Fenster muss unter  `Secret-Service-Integration`  eine Gruppe festgelegt werden, in der allte Passwörter des Secret-Services abgespeichert werden. Anschließend ist alles bereit zur Nutzung. 
+Damit KeepassXC als Secret-Service verwendet wird muss unter den Einstellungen `Secret-Service-Integration` aktiviert werden.  Anschließend muss bei `Offengelegte Datenbankgruppen` die entsprechende Datenbank mit dem Stift bearbeitet werden.  In diesem Fenster muss unter  `Secret-Service-Integration`  eine Gruppe festgelegt werden, in der alte Passwörter des Secret-Services abgespeichert werden. Anschließend ist alles bereit zur Nutzung. 
 
 
