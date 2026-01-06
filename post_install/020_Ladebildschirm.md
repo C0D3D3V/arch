@@ -6,23 +6,22 @@
 Linux hat ohne [plymouth](https://wiki.archlinux.org/index.php/plymouth) keinen Splash-Screen während dem Bootvorgang, stattdessen wird beim Booten die Terminaltausgabe präsentiert. Damit ein schöner Ladebildschirm dargestellt wird, muss zunächst `plymouth` installiert werden.
 
     + plymouth-git
-    + ttf-dejavu
+    - ttf-dejavu
 
 Die Font `ttf-dejavu` wird zum korrekten darstellen gebraucht.
 
 Es gibt eine riesige [Auswahl an Ladebildschirmen](https://github.com/adi1090x/plymouth-themes) eines dieser Themes kann aus dem [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=plymouth-theme-&outdated=&SB=n&SO=a&PP=50&do_Search=Go) heruntergeladen werden. `plymouth-theme-abstract-ring-git` ist ganz ansprechend, `plymouth-theme-angular-git` auch.
 
-    + plymouth-theme-abstract-ring-git
+    - plymouth-theme-abstract-ring-git
     + plymouth-theme-angular-git
 
 Anschließend muss die `/etc/mkinitcpio.conf` Datei angepasst werden.
 
-* Nach `base udev` muss `plymouth` hinzugefügt werden.
-* `encrypt`muss mit `plymouth-encrypt` ersetzt werden.
+* Nach `keymap` muss `plymouth` hinzugefügt werden.
 
 Dies könnte wie folgt aussehen:
 
-    HOOKS=(base udev plymouth keyboard keymap autodetect consolefont modconf block plymouth-encrypt filesystems resume fsck)
+    HOOKS=(base udev keyboard keymap plymouth autodetect consolefont modconf block encrypt filesystems resume fsck)
 
 
 Dann müssen die Kernel-Parameter angepasst werden. Dazu werden in `/boot/loader/entries/arch.conf` folgende Optionen hinzugefügt: 
@@ -38,11 +37,10 @@ Um das Arch-Logo beim Boot darzustellen muss dieses entsprechend platziert werde
 Abschließend muss `plymouth` konfiguriert werden, dazu wird `/etc/plymouth/plymouthd.conf` bearbeitet:
 
     [Daemon]
-    Theme=abstract-ring
+    Theme=angular
     ShowDelay=0
     DeviceTimeout=8
 
-Alternativ kann `angular` statt `abstract-ring` verwendet werden.
 
 Anschließend muss das Initrmfs Abbild neu gebaut werden:
 
@@ -50,14 +48,35 @@ Anschließend muss das Initrmfs Abbild neu gebaut werden:
 
 ## Display-Manager
 
-Ein guter [Displaymanger](https://wiki.archlinux.org/index.php/Display_manager) ist [lightdm](https://wiki.archlinux.org/index.php/LightDM#Changing_background_images/colors):
 
-    + xorg-server
-    + lightdm
-    + lightdm-webkit2-greeter
-    + lightdm-webkit-theme-litarvan
+Ein guter [Displaymanger](https://wiki.archlinux.org/index.php/Display_manager) ist [SDDM](https://wiki.archlinux.org/title/SDDM):
 
-* `xorg-server` wird benötigt damit lightdm dargestellt wird.
+    + sddm
+    + sddm-astronaut-theme
+
+* `sddm-astronaut-theme` ist ein nettes Theme
+
+Zum testen kann folgendes ausgeführt werden: `sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/astronaut` Das öffnet lediglich ein Fenster in Fullscreen-Mode.
+
+
+Um das Theme permanent zu aktivieren wird in  `/etc/sddm.conf` folgendes gesetzt:
+
+    Current=astronaut
+
+Der Service muss noch aktiviert werden:
+
+    systemctl enable sddm
+
+
+<!-- 
+
+Als alternative kann [lightdm](https://wiki.archlinux.org/index.php/LightDM#Changing_background_images/colors) verwendet werden:
+
+
+    - lightdm
+    - lightdm-webkit2-greeter
+    - lightdm-webkit-theme-litarvan
+
 * `lightdm-webkit2-greeter` ist ein netter greeter
 * `lightdm-webkit-theme-litarvan` ist dessen Theme
 
@@ -76,5 +95,6 @@ Und in `/etc/lightdm/lightdm-webkit2-greeter.conf` muss die Konfiguration vom we
 
 Weil `plymouth` bereits installiert ist, genügt es den entsprechenden Dienst zu aktivieren:
 
-    systemctl enable lightdm-plymouth
+    #systemctl enable lightdm-plymouth
 
+-->
