@@ -65,7 +65,7 @@ Um das Theme permanent zu aktivieren wird in  `/etc/sddm.conf` folgendes gesetzt
 
 Der Service muss noch aktiviert werden:
 
-    systemctl enable sddm
+    systemctl enable --now sddm
 
 
 <!-- 
@@ -95,6 +95,6 @@ Und in `/etc/lightdm/lightdm-webkit2-greeter.conf` muss die Konfiguration vom we
 
 Weil `plymouth` bereits installiert ist, genügt es den entsprechenden Dienst zu aktivieren:
 
-    #systemctl enable lightdm-plymouth
+    #systemctl enable --now lightdm
 
 -->
