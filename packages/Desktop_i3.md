@@ -105,6 +105,7 @@ Notwendige Python Pakete für die i3 Skripte:
 * `python-mss` um Screenshots zu erstellen
 * `python-psutil` um Prozesse zu überwachen
 * `python-playsound` um Sounds abzuspielen
+* `python-pywal` um Color Schemas zu erzeugen
 
 
 
