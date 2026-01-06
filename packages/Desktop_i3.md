@@ -15,7 +15,6 @@ Hier dreht sich alles um die Installation von `i3`
     + xautolock
     + betterlockscreen
     + dunst
-    + lxpolkit
     + autorandr
     + arandr
     + xorg-xbacklight
@@ -25,11 +24,10 @@ Hier dreht sich alles um die Installation von `i3`
 * `i3status-rust-git` als Status Bar
 * `wpgtk` Theme manager
 * `feh` um ein Hintergrund zu setzen
-* `lxsession` X11 Session manager
+* `lxsession` X11 Session manager / Berechtigungsmanagment für Apps
 * `xsettingsd` um Anpassungen am Aussehen von GTK-Anwendungen direkt durchzuführen
 * `xautolock` und `betterlockscreen` automatisches sperren des Bildschirms
 * `dunst` als Benachrichtigungssystem ([Mod+Minus] entfernt eine Benachrichtigung, [Mod+Punkt] holt sie wieder her)
-* `lxpolkit` Berechtigungsmanagment für Apps
 * `autorandr` automatische Bildschirmeinstellungen
 * `arandr` manuelle Bildschirmeinstellungen
 * `xorg-xbacklight` Bildschirmhellichkeit anpassen

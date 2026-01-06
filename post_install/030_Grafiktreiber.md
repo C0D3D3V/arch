@@ -16,11 +16,15 @@ Speziell sollte geprüft werden ob die Grafikkarte als [bei NVIDIA](https://www.
 
 Für GeForce GTX 660 ist es also ausreichen `nvidia` zu installieren.
 
-    - nvidia
+    - nvidia-open-dkms
+    - nvidia-utils
     - lib32-nvidia-utils
-    - xorg-xrandr
 
 `lib32-nvidia-utils` wird benötigt um auch 32 Bit Anwendungen zu unterstützen.
+
+<!--
+    - xorg-xrandr
+
 `xrandr` um die Beischirmeinstellungen automatisch einzurichten.
 
 Weil LightDm verwendet wird sollte die Konfiguration [von lightdm](https://wiki.archlinux.org/index.php/NVIDIA_Optimus#LightDM) angepasst werden: 
@@ -40,6 +44,8 @@ Dann kann es in der lightDm Konfiguration `/etc/lightdm/lightdm.conf` hinzugefü
 
     [Seat:*]
     display-setup-script=/etc/lightdm/display_setup.sh
+
+-->
 
 <!--
 Zunächst sollte eine einfache Konfiguration für xorg erstellt werden
@@ -85,8 +91,12 @@ Um die Einstellungen des Treibers zu verwalten kann `nividia-settings` installie
 
     - mesa
     - lib32-mesa
+    - vulkan-intel
+    - lib32-vulkan-intel
+    - intel-media-driver
+    - linux-firmware-intel
 
-
+<!-- 
 Anschließend muss die `/etc/mkinitcpio.conf` Datei angepasst werden. Zu den `MODULES` muss der Kernel-Grafiktreiber `i915` hinzugefügt werden. 
 
     MODULES=(i915 ...)
@@ -94,3 +104,4 @@ Anschließend muss die `/etc/mkinitcpio.conf` Datei angepasst werden. Zu den `MO
 Danach kann das `initramfs` Abbild neu gebaut werden:
 
     sudo mkinitcpio -P
+-->
