@@ -9,7 +9,7 @@ Damit man vor dem System-Update die neusten Arch News lesen muss, gibt es ein pa
 
 Der Benutzer muss in der Gruppe `informant` sein.
 
-    gpasswd -a USERNAME informant
+    #gpasswd -a USERNAME informant
 
 Wenn der Kernel aktualisiert werden werden die Kernelmodule nicht mehr korrekt geladen, weil diese im neuen Ordner liegen. Damit diese weiterhin geladen werden können hilft `kernel-modules-hook`:
 
