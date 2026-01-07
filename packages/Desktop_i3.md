@@ -10,6 +10,8 @@ Hier dreht sich alles um die Installation von `i3`
     + i3status-rust-git
     + wpgtk
     + lxappearance
+    + qt5ct
+    + qt6ct
     + feh
     + lxsession
     + xsettingsd
@@ -24,7 +26,9 @@ Hier dreht sich alles um die Installation von `i3`
 * `picom` Compositor für X11
 * `i3status-rust-git` als Status Bar
 * `wpgtk` Theme manager
-* `lxappearance` to change the GTK-Theme
+* `lxappearance` um das GTK-Theme anzupassen
+* `qt5ct` um das QT5-Theme anzupassen
+* `qt6ct` um das QT6-Theme anzupassen
 * `feh` um ein Hintergrund zu setzen
 * `lxsession` X11 Session manager / Berechtigungsmanagment für Apps
 * `xsettingsd` um Anpassungen am Aussehen von GTK-Anwendungen direkt durchzuführen
@@ -33,15 +37,6 @@ Hier dreht sich alles um die Installation von `i3`
 * `autorandr` automatische Bildschirmeinstellungen
 * `arandr` manuelle Bildschirmeinstellungen
 * `xorg-xbacklight` Bildschirmhellichkeit anpassen
-
-
-Verwende ich nicht mehr:
-
-    - gtk-engine-murrine
-    - qt5-styleplugins
-
-* `gtk-engine-murrine` schönere GTK Themes
-* `qt5-styleplugins` um GTK2 Themes als QT Theme verrwenden zu können
 
 
 Extras:
@@ -67,13 +62,6 @@ Rofi Menüs:
 * Theme ändern [Mod+t]
 * Herunterfahren Menü [Mod+Shift+e]
 
-Veraltet:
-    - rofimoji
-    - rofi-surfraw-git
-
-* `rofimoji` ein Tool um Emojies auszuwählen [Mod+p]
-* `rofi-surfraw-git` um schnell im Web zu suchen [Mod+q]
-
 Optional:
 
     - copyq
@@ -82,10 +70,14 @@ Optional:
 
 Themes:
 
-    + breeze-gtk
+    + arc-gtk-theme-git
+    + kvantum
+    + kvantum-qt5
     + papirus-icon-theme
 
-* `breeze-gtk` Breeze Theme für GTK-Anwendungen
+* `arc-gtk-theme-git`Theme für GTK-Anwendungen
+* `kvantum`Theme für QT-Anwendungen
+* `kvantum-qt5`Theme für QT5-Anwendungen
 * `papirus-icon-theme` für schönere Icons
 
 
