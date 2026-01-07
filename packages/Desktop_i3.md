@@ -9,6 +9,7 @@ Hier dreht sich alles um die Installation von `i3`
     + picom
     + i3status-rust-git
     + wpgtk
+    + lxappearance
     + feh
     + lxsession
     + xsettingsd
@@ -23,6 +24,7 @@ Hier dreht sich alles um die Installation von `i3`
 * `picom` Compositor für X11
 * `i3status-rust-git` als Status Bar
 * `wpgtk` Theme manager
+* `lxappearance` to change the GTK-Theme
 * `feh` um ein Hintergrund zu setzen
 * `lxsession` X11 Session manager / Berechtigungsmanagment für Apps
 * `xsettingsd` um Anpassungen am Aussehen von GTK-Anwendungen direkt durchzuführen
