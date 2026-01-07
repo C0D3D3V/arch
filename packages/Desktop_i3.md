@@ -70,12 +70,12 @@ Optional:
 
 Themes:
 
-    + arc-gtk-theme-git
+    + arc-gtk-theme
     + kvantum
     + kvantum-qt5
     + papirus-icon-theme
 
-* `arc-gtk-theme-git`Theme für GTK-Anwendungen
+* `arc-gtk-theme`Theme für GTK-Anwendungen
 * `kvantum`Theme für QT-Anwendungen
 * `kvantum-qt5`Theme für QT5-Anwendungen
 * `papirus-icon-theme` für schönere Icons
