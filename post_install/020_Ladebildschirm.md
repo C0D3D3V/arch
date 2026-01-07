@@ -66,7 +66,7 @@ Um das Theme permanent zu aktivieren wird in  `/etc/sddm.conf` folgendes gesetzt
 
 Zudem ist es ein guter Zeitpunkt um das Keyboard-Layout für die X11 Welt festzulegen mit:
 
-    localectl --no-convert set-x11-keymap de
+    sudo localectl --no-convert set-x11-keymap de
 
 
 Der Service muss noch aktiviert werden:
