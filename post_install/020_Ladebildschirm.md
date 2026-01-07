@@ -63,6 +63,12 @@ Um das Theme permanent zu aktivieren wird in  `/etc/sddm.conf` folgendes gesetzt
 
     Current=astronaut
 
+
+Zudem ist es ein guter Zeitpunkt um das Keyboard-Layout für die X11 Welt festzulegen mit:
+
+    localectl --no-convert set-x11-keymap de
+
+
 Der Service muss noch aktiviert werden:
 
     systemctl enable --now sddm
