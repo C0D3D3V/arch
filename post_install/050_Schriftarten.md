@@ -35,8 +35,13 @@
 ## Symbol Fonts
 
     + otf-font-awesome
+    + woff2-font-awesome
     + awesome-terminal-fonts
+    + ttf-meslo-nerd-font-powerlevel10k
+    + ttf-nerd-fonts-symbols
+    + ttf-nerd-fonts-symbols-common
     + ttf-material-symbols-variable
+    + ttf-material-design-icons-extended
 
 Damit die [Schriftarten korrekt verwendet werden](https://dev.to/darksmile92/get-emojis-working-on-arch-linux-with-noto-fonts-emoji-2a9), erstelle die Datei `/etc/fonts/local.conf` mit folgendem Inhalt:
 

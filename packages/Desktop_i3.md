@@ -97,6 +97,7 @@ Notwendige Python Pakete für die i3 Skripte:
     + python-mss
     + python-psutil
     + python-playsound
+    + python-pywal
 
 * `python-i3ipc` um mit i3 zu kommunizieren
 * `python-notify2` um Benachrichtigungen zu senden
