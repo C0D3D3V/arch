@@ -19,8 +19,10 @@ Für GeForce GTX 660 ist es also ausreichen `nvidia` zu installieren.
     - nvidia-open-dkms
     - nvidia-utils
     - lib32-nvidia-utils
+    - linux-headers
 
 `lib32-nvidia-utils` wird benötigt um auch 32 Bit Anwendungen zu unterstützen.
+`linux-headers` nicht vergessen, damit das DKMS Modul compiliert werden kann
 
 <!--
     - xorg-xrandr
