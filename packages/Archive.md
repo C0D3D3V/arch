@@ -7,7 +7,7 @@ Um [Archive](https://wiki.archlinux.org/title/Archiving_and_compression) zu entp
     + 7zip
     + unrar
     + zip
-    + unzio
+    + unzip
 
 * `lrzip` für LRZ Formate (.lrz)
 * `lzop`für LZO Formate (.lzo, .tzo)

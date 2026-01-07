@@ -5,8 +5,8 @@ Bisher gibt es wenige gute Alternativen zu [Libre-Office](https://wiki.archlinux
     + libreoffice-fresh
     + libreoffice-fresh-de
     + libpaper
-    + hunspell-en_US
-    + hunspell-en_GB
+    + hunspell-en_us
+    - hunspell-en_gb
     + hunspell-de
     + hyphen-de
     + hyphen-en
